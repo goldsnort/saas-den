@@ -1,0 +1,136 @@
+.menu-switch{
+    display:none ;
+}
+.navbar-container{
+    width:100%;
+    height:65px;
+    padding:12px 12px;
+    display:flex;
+    justify-content:space-between;
+    background-color:rgba(0,0,0,0);
+    align-items: center;
+    transition:ease-in 0.18s;
+}
+
+.navbar-left{
+    width:100%;
+    justify-self: flex-start;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    transition:ease-in 0.18s;
+}
+
+.navbar-left-items{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+}
+.navbar-left-items *{
+    padding:5px 29px;
+}
+
+.navbar-left-items a:link{
+    text-decoration:none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    color:black;
+}
+
+.navbar-left-items a:visited{
+    text-decoration:none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    color:black;
+}
+
+.navbar-left-items a:hover{
+    text-decoration:none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    color:black;
+}
+
+.navbar-left-items a:active{
+    text-decoration:none;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    color:black;
+}
+
+.navbar-logo-img{
+    max-height:50px;
+    border-radius: 9px;
+    transform: translateY(2px);
+}
+
+.navbar-right{
+    display:flex;
+}
+.get-early-access-btn{
+    border:none;
+    color:white;
+    padding:11px 10px;
+    background-color:#1A1D21;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 29px;
+    text-align: center;
+    border-radius:11px;
+    cursor:pointer;
+}
+
+.navbar-btn{
+    padding:0;
+    width:200px;
+    white-space: nowrap;
+}
+
+
+
+
+@media(max-width:830px){
+    .navbar-left-items{
+        display:none;
+        transition:ease-in 0.1s;
+    }
+
+    .menu-switch{
+        display:flex ;
+        transform:translateY(10px);
+        transition:ease-in 0.1s;
+    }
+
+    .navbar-container{
+        height:auto;
+        align-items: flex-start;
+        transition:ease-in 0.1s;
+    }
+    .navbar-left{
+        display:flex;
+        flex-direction:column;
+        transition:ease-in 0.1s;
+    }
+    .navbar-left-items.active{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        transition:ease-in 0.1s;
+    }
+    .navbar-left-items-list.active{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        transition:ease-in 0.1s;
+    }
+        
+}
