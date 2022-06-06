@@ -31,13 +31,14 @@
     padding:5px 29px;
 }
 
-.navbar-left-items a:link{
+.navbar-left-items a:link, .navbar-left-items a:visited, .navbar-left-items a:hover, .navbar-left-items a:active, .navbar-left-items a{
     text-decoration:none;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 600;
     font-size: 22px;
     color:black;
+    cursor:pointer;
 }
 
 .navbar-left-items a:visited{

@@ -5,3 +5,7 @@
   text-decoration:none;
   align-items:center;
 }
+
+.app{
+  min-width:100vh;
+}

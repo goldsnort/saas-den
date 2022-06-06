@@ -1,6 +1,7 @@
 import { useState, React } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import { Link as SLink } from "react-scroll";
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -37,12 +38,36 @@ function Navbar() {
                     : "navbar-left-items-list"
                 }
               >
-                <Link to="/">Features</Link>
-                <Link to="/">Pricing</Link>
+                <SLink
+                  activeClass="active"
+                  to="home-desc"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                >
+                  Features
+                </SLink>
+                <SLink
+                  activeClass="active"
+                  to="home-plans"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                >
+                  Pricing
+                </SLink>
                 <Link to="/">Blogs</Link>
-                <Link to="/">About Us</Link>
+                <SLink
+                  activeClass="active"
+                  to="about-us"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                >
+                  About Us
+                </SLink>
               </div>
-              <Link to="/" className="navbar-btn">
+              <Link to="/early-access" className="navbar-btn">
                 <button className="get-early-access-btn">
                   Get Early Access
                 </button>

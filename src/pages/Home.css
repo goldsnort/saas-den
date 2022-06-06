@@ -1,3 +1,6 @@
+.fas{
+    color:grey;
+}
 .background-ellipse{
     z-index:-1;
     position: absolute;
@@ -113,7 +116,7 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    font-size: 32px;
+    font-size: 70px;
     line-height: 48px;
     display: flex;
     align-items: center;
@@ -171,28 +174,8 @@
     align-items:center;
     background:radial-gradient(62.86% 62.86% at 33.57% 37.14%, #15A488 0%, #5BC4AF 100%);
 }
-.home-card-img i{
-    width:100%;
-    justify-self:center;
-    padding-left:19px;
-    justify-content: center;
-    color:white;
-}
-.home-card-img-one i{
-    width:100%;
-    justify-self:center;
-    padding-left:19px;
-    justify-content: center;
-    color:white;
-}
-.home-card-img-two i{
-    width:100%;
-    justify-self:center;
-    padding-left:19px;
-    justify-content: center;
-    color:white;
-}
-.home-card-img-three i{
+
+.home-card-img i, .home-card-img-one i, .home-card-img-two i,.home-card-img-three i{
     width:100%;
     justify-self:center;
     padding-left:19px;
@@ -200,10 +183,7 @@
     color:white;
 }
 
-
-.home-desc-card{
-    width:290px;
-    height:360px;   
+.card{
     display: flex;
 flex-direction: column;
 align-items: flex-start;
@@ -212,7 +192,12 @@ padding: 13px 10px;
 background: #FCFCFC;
 box-shadow: 3px 5px 6px rgba(0, 0, 0, 0.12), inset 0px 4px 4px rgba(255, 253, 242, 0.25);
 border-radius: 20px;
-margin:30px 50px;
+}
+
+.home-desc .card{
+    width:290px;
+    height:360px;
+    margin:30px 50px;
 }
 
 .fa-bolt{
@@ -252,7 +237,7 @@ line-height: 32px;
 
 }
 
-.plans-heading{
+.plans.heading{
     font-family: 'Inter';
 font-style: normal;
 font-weight: 800;
@@ -287,6 +272,91 @@ color: #636363;
 .plans-blur-pic{
     margin-top:40px;
     width:88vw;
+    max-width:1400px;
+}
+
+.about-us{
+    align-items:flex-start;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+    width:100%;
+    padding:50px 8vw;
+    margin-top:200px;
+    background: radial-gradient(circle, rgba(192,224,242,0.5) 45%, rgba(255,255,255,1) 100%);
+    margin-bottom:200px;
+}
+
+.about-us .heading{
+    margin:40px 0;
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 800;
+font-size: 70px;
+line-height: 85px;
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 2px;
+
+}
+
+.about-us .desc{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 36px;
+display: flex;
+align-items: center;
+letter-spacing: -0.25px;
+}
+
+.about-us .card-container{
+    width:100%;
+    display:flex;
+    max-width:1400px;
+    margin-top:70px;
+    justify-content: space-around;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+}
+
+.about-us-card{
+    margin-top:20px;
+    height: 300px;
+    width:270px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-around;
+padding: 13px 10px;
+background: #FCFCFC;
+box-shadow: 3px 5px 6px rgba(0, 0, 0, 0.12), inset 0px 4px 4px rgba(255, 253, 242, 0.25);
+border-radius: 10px;
+}
+
+.about-us-card img{
+    height:200px;
+     width:200px;
+    border-radius:50%;
+}
+
+.au-card-heading{
+    padding-top:10px;
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 700;
+font-size: 24px;
+line-height: 36px;
+}
+
+.au-card-sub-heading{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 18px;
+line-height: 32px;
 }
 
 @media(max-width:700px){
@@ -305,7 +375,7 @@ color: #636363;
     .home-top-btn{
         padding:14px 30px;
     }
-    .plans-heading{
+    .plans.heading{
         font-size:64px;
     }
     .home-desc{
@@ -330,34 +400,20 @@ color: #636363;
         font-size:19px;
         line-height:24px;
     }
-    .plans-heading{
+    .plans.heading{
         font-size:50px;
     }
     .plans-sub-heading{
         font-size:35px;
     }
-}
+} 
 
-@media(max-width:440px){
+ @media(max-width:440px){
     .home-top-input{
         width:150px;
         padding:10px 13px;
     }
     .home-top-btn{
         padding:13px 18px;
-    }
-    .home-top-1{
-        font-size:32px;
-        line-height:39px;
-    }
-    .home-top-2{
-        font-size:32px;
-        line-height:39px;
-    }
-    .plans-heading{
-        font-size:42px;
-    }
-    .plans-sub-heading{
-        font-size:27px;
     }
 }
