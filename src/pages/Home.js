@@ -1,38 +1,27 @@
 import React from "react";
 import "./Home.css";
 import Footer from "../components/Footer";
+import ImageSlider from "../components/ImageSlider";
+import { SliderData } from "../components/SliderData";
+
 function Home() {
   return (
     <div className="home">
       <div className="background-ellipse"></div>
+      <div className="background-ellipse-2"></div>
+      <div className="background-lines"></div>
 
       {/* HOME TOP */}
 
       <section id="home-top" className="home-top">
         <div className="home-back"></div>
-        <div className="home-top-1" data-aos="fade-right">
-          No More Surprises
-        </div>
+        <div className="home-top-1">One dashboard for your</div>
         <div className="home-top-2">
-          <div className="home-top-1">Know your SaaS Billing and Costs</div>
+          <div className="home-top-1">SaaS Subscriptions</div>
         </div>
-        <div
-          className="home-top-5"
-          data-aos="fade-up"
-          data-aos-delay="900"
-          data-aos-duration="2000"
-        >
-          Optimize your SaaS Stack with SaaSDen
-        </div>
-        <div
-          className="home-top-6"
-          data-aos="fade-up"
-          data-aos-delay="900"
-          data-aos-duration="2200"
-        >
-          Register now for early access
-        </div>
-        <form id="home-page-email" aos-data="fade-up">
+        <div className="home-top-5">Know your SaaS Billing and Costs</div>
+        <div className="home-top-6">Register now for early access</div>
+        <form className="home-page-email" aos-data="fade-up">
           <input
             type="text"
             name="E mail"
@@ -57,7 +46,7 @@ function Home() {
         <div className="home-desc-card-container">
           <div className="home-desc card">
             <div className="home-card-img">
-              <i className="fas fa-phone fa-2x"></i>
+              <i className="fas fa-toggle-on fa-2x"></i>
             </div>
             <div className="home-card-heading">Subscription Dashboard</div>
             <div className="home-card-text">
@@ -77,7 +66,7 @@ function Home() {
           </div>
           <div className="home-desc card">
             <div className="home-card-img-two">
-              <i className="fas fa-thumbs-up fa-2x"></i>
+              <i className="far fa-chart-bar fa-2x"></i>
             </div>
             <div className="home-card-heading">Analytics</div>
             <div className="home-card-text">
@@ -112,39 +101,20 @@ function Home() {
       {/* ABOUT US SECTION */}
 
       <section id="about-us" className="about-us">
-        <div className="heading">ABOUT US</div>
-        <div className="desc">
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-          scrambled it to make a type specim
-        </div>
-        <div className="card-container">
-          <div className="about-us-card">
-            <img src={require("../components/pfp_1.jpeg")} alt=""></img>
-            <div className="au-card-heading">
-              Aryaman Singh&nbsp;
-              <i className="fas fa-external-link-square-alt"></i>
-            </div>
-            <div className="au-card-sub-heading">Position Held</div>
-          </div>
-          <div className="about-us-card">
-            <img src={require("../components/logo.png")} alt=""></img>
-            <div className="au-card-heading">
-              Aryaman Singh&nbsp;
-              <i className="fas fa-external-link-square-alt"></i>
-            </div>
-            <div className="au-card-sub-heading">Position Held</div>
-          </div>
-          <div className="about-us-card">
-            <img src={require("../components/logo.png")} alt=""></img>
-            <div className="au-card-heading">
-              Aryaman Singh&nbsp;
-              <i className="fas fa-external-link-square-alt"></i>
-            </div>
-            <div className="au-card-sub-heading">Position Held</div>
+        <div className="about-us-top">
+          <div className="heading">ABOUT US</div>
+          <div className="desc">
+            SaaSDen gives its customers the ability to optimize their SaaS stack
+            through an easy-to-use management dashboard. It is a cloud-based
+            tool that enables customers to gather analytics and insights about
+            their best performing SaaS products. Customers can track their
+            software subscriptions, renew them and reduce waste by viewing
+            realtime spend analytics. Our integrations help in managing users
+            and licenses etc. helping our customers effectively manage their
+            SaaS.
           </div>
         </div>
+        <ImageSlider slides={SliderData} />
       </section>
 
       {/* TODO: PUT FOOTER HERE */}

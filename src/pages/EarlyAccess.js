@@ -3,7 +3,7 @@ import Form from "../components/EAccessForm";
 
 function EarlyAccess() {
   return (
-    <div>
+    <div className="early-access">
       <Form />
     </div>
   );

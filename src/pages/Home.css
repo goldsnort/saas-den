@@ -4,29 +4,56 @@
 .background-ellipse{
     z-index:-1;
     position: absolute;
-    width: 1555px;
-    height: 1082px !important;
-    left: 226px;
-    top: -310px;
+    width: 100vw;
+    height: 280vh ;
+    right: -60vw;
+    bottom: 0vh;
     background: radial-gradient(52.68% 80.93% at 67.21% 30.56%, rgba(105, 178, 244, 0.4) 0%, rgba(150, 236, 226, 0.1) 100%);
-    filter: blur(200px);
+    filter: blur(100px);
+}
+.background-ellipse-2{
+    z-index:-1;
+    position: absolute;
+    width: 100vw;
+    height: 180vh;
+    left: -70vw;
+    top:240vh;
+    background: radial-gradient(52.68% 80.93% at 67.21% 30.56%, rgba(105, 178, 244, 0.4) 0%, rgba(150, 236, 226, 0.1) 100%);
+    filter: blur(400px);
 }
 
-
-.home-top{
-    margin-top:100px;
-    padding-left:7vw;
+.background-lines{
     background:url("../components/image-removebg-preview.png");
     background-size:100%;
+    background-repeat: no-repeat;
+    z-index:-1;
+    position:absolute;
+    width: 100vw;
+    height:1000px;
+    left: -0vw;
+    top:400px;
+}
+
+.home{width:100vw;
+    background:transparent;
+
+}
+
+.home-top{
+    background: transparent;
+    height: 700px;
+    padding-left:7vw;
+    background-size:100%;
     background-repeat:no-repeat;
-    padding-bottom:200px;
+    padding-bottom:300px;
+    margin-top:270px;
 }
 .home-top-1{
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 700;
-    font-size: 64px;
-    line-height: 77px;
+    font-weight: 800;
+    font-size: 85px;
+    line-height: 90px;
     display: flex;
     align-items: center;    
     color: #1A1D21;
@@ -36,13 +63,11 @@
     margin-top:10px;
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 700;
-    font-size: 64px;
-    line-height: 77px;
+    font-weight: 800;
+    font-size: 50px;
     display: flex;
     align-items: center;
     color: rgb(2,0,36);
-
     background-image: linear-gradient(357deg, rgba(2,0,36,1) 0%, rgba(56,92,240,1) 100%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -57,7 +82,7 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 30px;
     line-height: 29px;
     display: flex;
     align-items: center;
@@ -65,23 +90,24 @@
 }
 
 .home-top-6{
-    margin-top:10px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    font-size: 26px;
+    font-size: 30px;
     line-height: 31px;
     display: flex;
     align-items: center;
     color: #5B5B5B;
+    margin-top:110px;
 }
 
 .home-top-input{
-    margin-top:90px;
+    width:440px;
+    margin-top:20px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 22px;
     line-height: 40px;
     padding:12px 21px;
     align-items: center;
@@ -93,7 +119,7 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    font-size: 21px;
+    font-size: 23px;
     line-height: 32px;
     padding:16px 40px;
     align-items: center;
@@ -104,13 +130,21 @@
     border: 2px solid #191FAC;
     border-radius:0 6px 6px 0;
     cursor:pointer;
+    margin-top:20px;
 }
 
 .home-desc{
     display:flex;
     flex-direction:column;
     margin-top:130px;
+    background:transparent;
 }
+
+.home-page-email{
+    display:flex;
+    flex-direction:row;
+}
+
 .home-desc-heading{
     margin-left:8vw;
     font-family: 'Inter';
@@ -126,7 +160,7 @@
 }
 
 .home-desc-text{
-    margin-top:20px;
+    margin-top:30px;
     margin-left:8vw;
     font-family: 'Inter';
     font-style: normal;
@@ -137,7 +171,7 @@
     align-items: center;
     letter-spacing: -0.25px;
     color: #2D3436;
-    max-width:980px;
+    max-width:1200px;
     align-self:flex-start;
 
 }
@@ -192,6 +226,12 @@ padding: 13px 10px;
 background: #FCFCFC;
 box-shadow: 3px 5px 6px rgba(0, 0, 0, 0.12), inset 0px 4px 4px rgba(255, 253, 242, 0.25);
 border-radius: 20px;
+transition:ease-in 0.2s;
+}
+
+.card:hover{
+    box-shadow: 3px 5px 6px rgba(0, 0, 0, 0.22), inset 0px 4px 4px rgba(255, 253, 242, 0.35);
+    transform: translateY(-5px);
 }
 
 .home-desc .card{
@@ -234,7 +274,8 @@ line-height: 32px;
     margin-top:200px;
     display:flex;
     flex-direction: column;
-
+    align-items: center;
+    background:transparent;
 }
 
 .plans.heading{
@@ -276,17 +317,20 @@ color: #636363;
 }
 
 .about-us{
-    align-items:flex-start;
+    align-self:center;
+    align-items:center;
     display:flex;
     flex-direction:column;
     justify-content:flex-start;
     width:100%;
-    padding:50px 8vw;
+    padding:50px 0;
     margin-top:200px;
-    background: radial-gradient(circle, rgba(192,224,242,0.5) 45%, rgba(255,255,255,1) 100%);
     margin-bottom:200px;
+    background:transparent;
 }
-
+.about-us-top{
+    padding:0 8vw;
+}
 .about-us .heading{
     margin:40px 0;
     font-family: 'Inter';
@@ -310,57 +354,16 @@ line-height: 36px;
 display: flex;
 align-items: center;
 letter-spacing: -0.25px;
+margin-bottom:120px;
 }
 
-.about-us .card-container{
-    width:100%;
-    display:flex;
-    max-width:1400px;
-    margin-top:70px;
-    justify-content: space-around;
-    flex-wrap:wrap;
-    margin-bottom:40px;
-}
-
-.about-us-card{
-    margin-top:20px;
-    height: 300px;
-    width:270px;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-around;
-padding: 13px 10px;
-background: #FCFCFC;
-box-shadow: 3px 5px 6px rgba(0, 0, 0, 0.12), inset 0px 4px 4px rgba(255, 253, 242, 0.25);
-border-radius: 10px;
-}
-
-.about-us-card img{
-    height:200px;
-     width:200px;
-    border-radius:50%;
-}
-
-.au-card-heading{
-    padding-top:10px;
-    font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 24px;
-line-height: 36px;
-}
-
-.au-card-sub-heading{
-    font-family: 'Inter';
-font-style: normal;
-font-weight: 600;
-font-size: 18px;
-line-height: 32px;
-}
 
 @media(max-width:700px){
     .home-top-1{
+        font-size:50px;
+        line-height:60px;
+    }
+    .home-desc-heading{
         font-size:50px;
         line-height:60px;
     }
@@ -385,6 +388,10 @@ line-height: 32px;
 
 @media(max-width:530px){
     .home-top-1{
+        font-size:40px;
+        line-height:48px;
+    }
+    .home-desc-heading{
         font-size:40px;
         line-height:48px;
     }

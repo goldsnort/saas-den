@@ -5,15 +5,34 @@ import { Link as SLink } from "react-scroll";
 
 function Navbar() {
   const [click, setClick] = useState(false);
+  const [navbar, setNavbar] = useState(false);
 
   const handleClick = () => {
     setClick(!click);
   };
 
+  const changeBackground = () => {
+    if (window.scrollY >= 65) {
+      setNavbar(true);
+    } else setNavbar(false);
+  };
+
+  window.addEventListener("scroll", changeBackground);
+
   return (
-    <div className="home">
+    <div>
       <nav>
-        <div className={click ? "navbar-container active" : "navbar-container"}>
+        <div
+          className={
+            click
+              ? navbar
+                ? "navbar-container active true"
+                : "navbar-container active"
+              : navbar
+              ? "navbar-container true"
+              : "navbar-container"
+          }
+        >
           <div className="menu-switch" onClick={handleClick}>
             <i className="fas fa-bars fa-2x" />
           </div>

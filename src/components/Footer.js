@@ -4,43 +4,37 @@ import "./Footer.css";
 function Footer() {
   return (
     <>
-      <div class="footer">
-        <div class="row">
-          <a href="/">
-            <i class="fas fa-facebook"></i>
+      <div className="footer">
+        <div className="row">
+          <a href="https://www.linkedin.com/company/saaasden/">
+            <i className="fab fa-linkedin"></i>
           </a>
           <a href="/">
-            <i class="fas fa-instagram"></i>
-          </a>
-          <a href="/">
-            <i class="fas fa-youtube"></i>
-          </a>
-          <a href="/">
-            <i class="fas fa-twitter"></i>
+            <i className="fab fa-twitter"></i>
           </a>
         </div>
 
-        <div class="row">
+        <div className="row">
           <ul>
             <li>
-              <a href="/">Contact us</a>
+              <a href="https://www.linkedin.com/company/saaasden/">
+                Contact us
+              </a>
             </li>
             <li>
-              <a href="/">Our Services</a>
+              <a href="https://www.linkedin.com/company/saaasden/">
+                rushant@sassden.club
+              </a>
             </li>
             <li>
-              <a href="/">Privacy Policy</a>
-            </li>
-            <li>
-              <a href="/">Terms & Conditions</a>
-            </li>
-            <li>
-              <a href="/">Career</a>
+              <a href="https://www.linkedin.com/company/saaasden/">
+                +91-9513843202
+              </a>
             </li>
           </ul>
         </div>
 
-        <div class="row">
+        <div className="row">
           SAASDEN Copyright © 2022 SaaSDen - All rights reserved
         </div>
       </div>

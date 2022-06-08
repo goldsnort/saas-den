@@ -1,15 +1,24 @@
 .menu-switch{
     display:none ;
 }
+
 .navbar-container{
     width:100%;
-    height:65px;
-    padding:12px 12px;
+    height:80px;
+    padding:12px 40px;
     display:flex;
     justify-content:space-between;
     background-color:rgba(0,0,0,0);
     align-items: center;
     transition:ease-in 0.18s;
+    position:fixed;
+    top:0;
+    z-index:5;
+    backdrop-filter: blur(7px) ;
+}
+
+.navbar-container.true{
+    background:white;
 }
 
 .navbar-left{
@@ -99,7 +108,7 @@
 
 
 
-@media(max-width:830px){
+@media(max-width:940px){
     .navbar-left-items{
         display:none;
         transition:ease-in 0.1s;
