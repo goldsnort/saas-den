@@ -63,37 +63,43 @@ function Navbar() {
                     : "navbar-left-items-list"
                 }
               >
-                <SLink
-                  activeClass="active"
-                  to="home-desc"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  onClick={negateClick}
-                >
-                  Features
-                </SLink>
-                <SLink
-                  activeClass="active"
-                  to="home-plans"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  onClick={negateClick}
-                >
-                  Pricing
-                </SLink>
+                <Link to="/">
+                  <SLink
+                    activeClass="active"
+                    to="home-desc"
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                    onClick={negateClick}
+                  >
+                    Features
+                  </SLink>
+                </Link>
+                <Link to="/">
+                  <SLink
+                    activeClass="active"
+                    to="home-plans"
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                    onClick={negateClick}
+                  >
+                    Pricing
+                  </SLink>
+                </Link>
                 <Link to="/">Blogs</Link>
-                <SLink
-                  activeClass="active"
-                  to="about-us"
-                  spy={true}
-                  smooth={true}
-                  duration={500}
-                  onClick={negateClick}
-                >
-                  About Us
-                </SLink>
+                <Link to="/">
+                  <SLink
+                    activeClass="active"
+                    to="about-us"
+                    spy={true}
+                    smooth={true}
+                    duration={500}
+                    onClick={negateClick}
+                  >
+                    About Us
+                  </SLink>
+                </Link>
               </div>
               <Link to="/early-access" className="navbar-btn">
                 <button onClick={negateClick} className="get-early-access-btn">
