@@ -84,7 +84,16 @@ function Navbar() {
                   <Link to="/">Pricing</Link>
                 </SLink>
 
-                <Link to="/">Blogs</Link>
+                <SLink
+                  activeClass="active"
+                  to="home"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={negateClick}
+                >
+                  <Link to="/">Blogs</Link>
+                </SLink>
 
                 <SLink
                   activeClass="active"
