@@ -1,12 +1,18 @@
 .early-access{
   height:100vh;
-  background:url("./images/YsWRDA.gif");
+  width:100vw;
+  background:url("../images/YsWRDA.gif");
   background-size: 100%;
   background-repeat:no-repeat;
   display:flex;
 }
-.container 		{ 
 
+@media (max-width:1260px) {
+  .early-access{
+    background-size:auto;
+  }
+} 
+  .container{ 
     font-family:'Inter';
     width:550px; 
     margin:0 auto 0;  
@@ -174,4 +180,3 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
   transform: translateY(0);
 }
-

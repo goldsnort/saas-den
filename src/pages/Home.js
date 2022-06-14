@@ -1,9 +1,8 @@
 import { React, useRef } from "react";
 import "./Home.css";
-import Footer from "../components/Footer";
-import ImageSlider from "../components/ImageSlider";
-import { SliderData } from "../components/SliderData";
+import Footer from "../components/Footer/Footer";
 import { toast, ToastContainer } from "react-toastify";
+import Slider from "../components/Slider/Slider";
 
 function Home() {
   const inputRef = useRef();
@@ -126,7 +125,8 @@ function Home() {
             SaaS.
           </div>
         </div>
-        <ImageSlider slides={SliderData} />
+        {/* <ImageSlider slides={SliderData} /> */}
+        <Slider />
       </section>
 
       {/* TODO: PUT FOOTER HERE */}

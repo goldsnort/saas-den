@@ -1,5 +1,5 @@
 import React from "react";
-import Form from "../components/EAccessForm";
+import Form from "../components/EAccessForm/EAccessForm";
 
 function EarlyAccess() {
   return (

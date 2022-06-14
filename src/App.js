@@ -2,7 +2,7 @@ import "./App.css";
 import "./pages/Home";
 import Home from "./pages/Home";
 import EarlyAccess from "./pages/EarlyAccess";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {

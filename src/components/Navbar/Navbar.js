@@ -40,7 +40,7 @@ function Navbar() {
             <Link to="/" className="navbar-logo">
               <img
                 className="navbar-logo-img"
-                src={require("../components/images/logo.png")}
+                src={require("../images/logo.png")}
                 alt="logo"
               ></img>
             </Link>

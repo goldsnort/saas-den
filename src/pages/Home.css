@@ -17,7 +17,7 @@
     width: 100vw;
     height: 180vh;
     left: -70vw;
-    top:240vh;
+    bottom:-330vh;
     background: radial-gradient(52.68% 80.93% at 67.21% 30.56%, rgba(105, 178, 244, 0.4) 0%, rgba(150, 236, 226, 0.1) 100%);
     filter: blur(400px);
 }
@@ -29,13 +29,14 @@
     z-index:-1;
     position:absolute;
     width: 100vw;
-    height:65vh;
+    height:70vh;
     left: -0vw;
     top:39vh;
 }
 
 .home{width:100vw;
     background:transparent;
+    overflow-x:hidden;
 
 }
 
@@ -323,7 +324,7 @@ color: #636363;
     width:100%;
     padding:50px 0;
     margin-top:18vh;
-    margin-bottom:20vh;
+    margin-bottom:10vh;
     background:transparent;
 }
 .about-us-top{
