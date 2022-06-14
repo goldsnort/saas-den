@@ -418,7 +418,7 @@ color: #636363;
  @media(max-width:440px){
     .home-top-input{
         width:150px;
-        padding:10px 13px;
+        padding:13px 13px;
     }
     .home-top-btn{
         padding:13px 18px;
