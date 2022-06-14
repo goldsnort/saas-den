@@ -29,15 +29,15 @@
     z-index:-1;
     position:absolute;
     width: 100vw;
-    height:70vh;
+    height:75vh;
     left: -0vw;
     top:30vh;
 }
 
-.home{width:100vw;
+.home{
+    width:100vw;
     background:transparent;
     overflow-x:hidden;
-
 }
 
 .home-top{
@@ -233,9 +233,9 @@ transition:ease-in 0.2s;
 }
 
 .home-desc .card{
-    width:290px;
+    width:270px;
     height:360px;
-    margin:30px 50px;
+    margin:30px 20px;
 }
 
 .fa-bolt{
