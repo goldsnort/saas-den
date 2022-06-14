@@ -52,8 +52,8 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 800;
-    font-size: 4rem;
-    line-height: 3.8rem;
+    font-size: 3.8rem;
+    line-height: 3.6rem;
     display: flex;
     align-items: center;    
     color: #1A1D21;
@@ -82,7 +82,7 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     display: flex;
     align-items: center;
     color: rgba(101, 101, 101, 0.8);
@@ -92,7 +92,7 @@
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     display: flex;
     align-items: center;
     color: #5B5B5B;
@@ -106,7 +106,7 @@
     font-style: normal;
     font-weight: 400;
     font-size: 17px;
-    line-height: 30px;
+    line-height: 26px;
     padding:10px 18px;
     align-items: center;
     color: rgba(44, 48, 49, 0.64);
@@ -118,8 +118,8 @@
     font-style: normal;
     font-weight: 700;
     font-size: 18px;
-    line-height: 32px;
-    padding:9px 32px;
+    line-height: 26px;
+    padding:10px 32px;
     align-items: center;
     text-align: center;
     letter-spacing: 0.2px;
@@ -134,7 +134,7 @@
 .home-desc{
     display:flex;
     flex-direction:column;
-    margin-top:130px;
+    margin-top:13vw;
     background:transparent;
 }
 
@@ -144,11 +144,11 @@
 }
 
 .home-desc-heading{
-    margin-left:8vw;
+    margin-left:7vw;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
-    font-size: 70px;
+    font-size: 4rem;
     line-height: 48px;
     display: flex;
     align-items: center;
@@ -159,7 +159,7 @@
 
 .home-desc-text{
     margin-top:30px;
-    margin-left:8vw;
+    margin-left:7.2vw;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
