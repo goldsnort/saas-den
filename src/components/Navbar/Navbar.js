@@ -11,6 +11,11 @@ function Navbar() {
     setClick(!click);
   };
 
+  const negateClick = () => {
+    console.log("negated a click");
+    setClick(false);
+  };
+
   const changeBackground = () => {
     if (window.scrollY >= 65) {
       setNavbar(true);
@@ -42,6 +47,7 @@ function Navbar() {
                 className="navbar-logo-img"
                 src={require("../images/logo.png")}
                 alt="logo"
+                onClick={negateClick}
               ></img>
             </Link>
 
@@ -63,6 +69,7 @@ function Navbar() {
                   spy={true}
                   smooth={true}
                   duration={500}
+                  onClick={negateClick}
                 >
                   Features
                 </SLink>
@@ -72,6 +79,7 @@ function Navbar() {
                   spy={true}
                   smooth={true}
                   duration={500}
+                  onClick={negateClick}
                 >
                   Pricing
                 </SLink>
@@ -82,12 +90,13 @@ function Navbar() {
                   spy={true}
                   smooth={true}
                   duration={500}
+                  onClick={negateClick}
                 >
                   About Us
                 </SLink>
               </div>
               <Link to="/early-access" className="navbar-btn">
-                <button className="get-early-access-btn">
+                <button onClick={negateClick} className="get-early-access-btn">
                   Get Early Access
                 </button>
               </Link>

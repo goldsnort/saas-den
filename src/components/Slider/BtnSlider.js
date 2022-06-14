@@ -2,7 +2,6 @@ import React from "react";
 import "./Slider.css";
 
 export default function BtnSlider({ direction, moveSlide }) {
-  console.log(direction, moveSlide);
   return (
     <button
       onClick={moveSlide}
