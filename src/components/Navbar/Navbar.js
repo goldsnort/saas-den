@@ -12,7 +12,6 @@ function Navbar() {
   };
 
   const negateClick = () => {
-    console.log("negated a click");
     setClick(false);
   };
 
@@ -63,43 +62,40 @@ function Navbar() {
                     : "navbar-left-items-list"
                 }
               >
-                <Link to="/">
-                  <SLink
-                    activeClass="active"
-                    to="home-desc"
-                    spy={true}
-                    smooth={true}
-                    duration={500}
-                    onClick={negateClick}
-                  >
-                    Features
-                  </SLink>
-                </Link>
-                <Link to="/">
-                  <SLink
-                    activeClass="active"
-                    to="home-plans"
-                    spy={true}
-                    smooth={true}
-                    duration={500}
-                    onClick={negateClick}
-                  >
-                    Pricing
-                  </SLink>
-                </Link>
+                <SLink
+                  activeClass="active"
+                  to="home-desc"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={negateClick}
+                >
+                  <Link to="/">Features</Link>
+                </SLink>
+
+                <SLink
+                  activeClass="active"
+                  to="home-plans"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={negateClick}
+                >
+                  <Link to="/">Pricing</Link>
+                </SLink>
+
                 <Link to="/">Blogs</Link>
-                <Link to="/">
-                  <SLink
-                    activeClass="active"
-                    to="about-us"
-                    spy={true}
-                    smooth={true}
-                    duration={500}
-                    onClick={negateClick}
-                  >
-                    About Us
-                  </SLink>
-                </Link>
+
+                <SLink
+                  activeClass="active"
+                  to="about-us"
+                  spy={true}
+                  smooth={true}
+                  duration={500}
+                  onClick={negateClick}
+                >
+                  <Link to="/">About Us</Link>
+                </SLink>
               </div>
               <Link to="/early-access" className="navbar-btn">
                 <button onClick={negateClick} className="get-early-access-btn">
