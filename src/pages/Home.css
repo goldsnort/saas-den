@@ -174,32 +174,32 @@
 }
 
 .home-card-img{
-    width:60px;
-    height:60px;
+    width:55px;
+    height:55px;
     background: radial-gradient(64.98% 69.29% at 27.14% 22.14%, #D81674 0%, #E764A3 100%);
     border-radius: 50%;
     display:flex;
     align-items:center;
 }
 .home-card-img-one{
-    width:60px;
-    height:60px;
+    width:55px;
+    height:55px;
     border-radius: 50%;
     display:flex;
     align-items:center;
     background: radial-gradient(60% 60% at 33.57% 31.43%, #116AAF 0%, #63A9DE 100%);
 }
 .home-card-img-three{
-    width:60px;
-    height:60px;
+    width:55px;
+    height:55px;
     border-radius: 50%;
     display:flex;
     align-items:center;
     background: radial-gradient(58.57% 58.57% at 41.43% 32.86%, #161BA5 0%, #5558AA 100%);
 }
 .home-card-img-two{
-    width:60px;
-    height:60px;
+    width:55px;
+    height:55px;
     border-radius: 50%;
     display:flex;
     align-items:center;
@@ -209,7 +209,7 @@
 .home-card-img i, .home-card-img-one i, .home-card-img-two i,.home-card-img-three i{
     width:100%;
     justify-self:center;
-    padding-left:15px;
+    padding-left:12px;
     justify-content: center;
     color:white;
 }
@@ -232,7 +232,7 @@ transition:ease-in 0.2s;
 }
 
 .home-desc .card{
-    width:260px;
+    width:240px;
     height:340px;
     margin:30px 20px;
 }
@@ -254,7 +254,7 @@ transition:ease-in 0.2s;
     font-family: 'Inter';
 font-style: normal;
 font-weight: 700;
-font-size: 24px;
+font-size: 22.5px;
 line-height: 36px;
 }
 
@@ -263,7 +263,7 @@ line-height: 36px;
     font-family: 'Inter';
 font-style: normal;
 font-weight: 400;
-font-size: 18px;
+font-size: 17px;
 line-height: 32px;
 }
 
