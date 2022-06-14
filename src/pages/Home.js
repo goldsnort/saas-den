@@ -1,12 +1,24 @@
-import React from "react";
+import { React, useRef } from "react";
 import "./Home.css";
 import Footer from "../components/Footer";
 import ImageSlider from "../components/ImageSlider";
 import { SliderData } from "../components/SliderData";
+import { toast, ToastContainer } from "react-toastify";
 
 function Home() {
+  const inputRef = useRef();
+
+  const notify = (e) => {
+    inputRef.current.value = "";
+    e.preventDefault();
+    toast.success("Your response has been recorded!", {
+      position: toast.POSITION.TOP_CENTER,
+    });
+  };
+
   return (
     <div className="home">
+      <ToastContainer />
       <div className="background-ellipse"></div>
       <div className="background-ellipse-2"></div>
       <div className="background-lines"></div>
@@ -21,16 +33,16 @@ function Home() {
         </div>
         <div className="home-top-5">Know your SaaS Billing and Costs</div>
         <div className="home-top-6">Register now for early access</div>
-        <form className="home-page-email" aos-data="fade-up">
+        <form onSubmit={notify} className="home-page-email" aos-data="fade-up">
           <input
-            type="text"
+            ref={inputRef}
+            type="email"
             name="E mail"
             className="home-top-input"
             placeholder="E-mail"
-          ></input>
-          <button type="button" className="home-top-btn">
-            Register
-          </button>
+            required
+          />
+          <button className="home-top-btn">Register</button>
         </form>
       </section>
 
@@ -93,7 +105,7 @@ function Home() {
         </div>
         <img
           className="plans-blur-pic"
-          src={require("../components/blur.png")}
+          src={require("../components/images/blur.png")}
           alt=""
         ></img>
       </section>

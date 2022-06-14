@@ -3,7 +3,7 @@
 }
 
 .navbar-container{
-    width:100%;
+    width:100vw;
     height:80px;
     padding:12px 40px;
     display:flex;
@@ -19,6 +19,7 @@
 
 .navbar-container.true{
     background:white;
+    box-shadow: 3px 3px 3px rgba(0,0,0,0.03);
 }
 
 .navbar-left{
@@ -124,6 +125,7 @@
         height:auto;
         align-items: flex-start;
         transition:ease-in 0.1s;
+        padding:16px 20px;
     }
     .navbar-left{
         display:flex;

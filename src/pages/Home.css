@@ -23,15 +23,15 @@
 }
 
 .background-lines{
-    background:url("../components/image-removebg-preview.png");
+    background:url("../components/images/image-removebg-preview.png");
     background-size:100%;
     background-repeat: no-repeat;
     z-index:-1;
     position:absolute;
     width: 100vw;
-    height:1000px;
+    height:65vh;
     left: -0vw;
-    top:400px;
+    top:39vh;
 }
 
 .home{width:100vw;
@@ -41,19 +41,18 @@
 
 .home-top{
     background: transparent;
-    height: 700px;
+    height: 70vh;
     padding-left:7vw;
     background-size:100%;
     background-repeat:no-repeat;
-    padding-bottom:300px;
-    margin-top:270px;
+    margin-top:27vh;
 }
 .home-top-1{
     font-family: 'Inter';
     font-style: normal;
     font-weight: 800;
-    font-size: 85px;
-    line-height: 90px;
+    font-size: 5.5rem;
+    line-height: 5.3rem;
     display: flex;
     align-items: center;    
     color: #1A1D21;
@@ -287,7 +286,6 @@ line-height: 85px;
 display: flex;
 align-items: center;
 text-align: center;
-letter-spacing: 3px;
 color: #2D3436;
 }
 
@@ -324,8 +322,8 @@ color: #636363;
     justify-content:flex-start;
     width:100%;
     padding:50px 0;
-    margin-top:200px;
-    margin-bottom:200px;
+    margin-top:18vh;
+    margin-bottom:20vh;
     background:transparent;
 }
 .about-us-top{
@@ -334,27 +332,26 @@ color: #636363;
 .about-us .heading{
     margin:40px 0;
     font-family: 'Inter';
-font-style: normal;
-font-weight: 800;
-font-size: 70px;
-line-height: 85px;
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 2px;
-
+    font-style: normal;
+    font-weight: 800;
+    font-size: 70px;
+    line-height: 85px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 2px;
 }
 
 .about-us .desc{
     font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 24px;
-line-height: 36px;
-display: flex;
-align-items: center;
-letter-spacing: -0.25px;
-margin-bottom:120px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.25px;
+    margin-bottom:120px;
 }
 
 
@@ -384,6 +381,10 @@ margin-bottom:120px;
     .home-desc{
         margin-top:60px;
     }
+    .about-us .heading{
+        font-size:50px;
+        line-height:60px;
+    }
 }
 
 @media(max-width:530px){
@@ -412,6 +413,10 @@ margin-bottom:120px;
     }
     .plans-sub-heading{
         font-size:35px;
+    }
+    .about-us .heading{
+        font-size:40px;
+        line-height:48px;
     }
 } 
 
