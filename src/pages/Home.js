@@ -3,6 +3,7 @@ import "./Home.css";
 import Footer from "../components/Footer/Footer";
 import { toast, ToastContainer } from "react-toastify";
 import Slider from "../components/Slider/Slider";
+import Navbar from "../components/Navbar/Navbar";
 
 function Home() {
   const inputRef = useRef();
@@ -17,6 +18,7 @@ function Home() {
 
   return (
     <div className="home">
+      <Navbar />
       <ToastContainer />
       <div className="background-ellipse"></div>
       <div className="background-ellipse-2"></div>
@@ -128,7 +130,6 @@ function Home() {
         {/* <ImageSlider slides={SliderData} /> */}
         <Slider />
       </section>
-
       {/* TODO: PUT FOOTER HERE */}
       <Footer />
     </div>

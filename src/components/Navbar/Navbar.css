@@ -3,18 +3,19 @@
 }
 
 .navbar-container{
-    width:100vw;
+    width:initial;
     height:68px;
-    padding:12px 40px;
+    padding:12px 20px;
     display:flex;
     justify-content:space-between;
     background-color:rgba(0,0,0,0);
     align-items: center;
     transition:ease-in 0.18s;
-    position:fixed;
+    /* position:fixed;
     top:0;
-    z-index:5;
+    z-index:5; */
     backdrop-filter: blur(7px) ;
+    align-items: center;
 }
 
 .navbar-container.true{
@@ -27,7 +28,6 @@
     justify-self: flex-start;
     display:flex;
     flex-direction: row;
-    align-items: center;
     white-space: nowrap;
     transition:ease-in 0.18s;
 }
@@ -35,47 +35,26 @@
 .navbar-left-items{
     width:100%;
     display:flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    align-items: center;
 }
-.navbar-left-items *{
-    padding:1vw 1.2vw;
-}
+
 
 .navbar-left-items a:link, .navbar-left-items a:visited, .navbar-left-items a:hover, .navbar-left-items a:active, .navbar-left-items a{
     text-decoration:none;
-    font-family: 'Montserrat';
+    font-family: 'Poppins',sans-serif;
     font-style: normal;
-    font-weight: 600;
-    font-size: 1.4rem;
+    font-weight: 500;
+    font-size: 1rem;
     color:black;
     cursor:pointer;
+    padding:10px 5px;
 }
 
-.navbar-left-items a:visited{
-    text-decoration:none;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1.4rem;
-    color:black;
-}
-
-.navbar-left-items a:hover{
-    text-decoration:none;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 1.4rem;
-    color:black;
-}
-
-.navbar-left-items a:active{
-    text-decoration:none;
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 22px;
-    color:black;
+.navbar-logo{
+    display:flex;
+    align-items:center;
+    justify-content: center;
 }
 
 .navbar-logo-img{
@@ -87,25 +66,16 @@
 .navbar-right{
     display:flex;
 }
-.get-early-access-btn{
-    border:none;
+.sign-out-btn{
     color:white;
-    padding:9px 10px;
     background-color:#1A1D21;
-    font-weight: 600;
-    font-size: 1.4rem;
-    line-height: 29px;
+    font-family:'Poppins',sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
     text-align: center;
-    border-radius:11px;
+    border-radius:5px;
     cursor:pointer;
-}
-
-.navbar-btn{
-    padding:0;
-    width:200px;
-    white-space: nowrap;
-    display: flex;
-    justify-content: flex-end;
+    padding:1px 5px;
 }
 
 
@@ -123,17 +93,18 @@
 
     .menu-switch{
         display:flex ;
-        transform:translateY(10px);
+        transform:translateY(15px);
         transition:ease-in 0.1s;
     }
 
     .navbar-container{
         height:auto;
         align-items: flex-start;
+        justify-content: space-between;
         transition:ease-in 0.1s;
-        padding:16px 20px;
     }
     .navbar-left{
+        width:auto;
         display:flex;
         flex-direction:column;
         transition:ease-in 0.1s;

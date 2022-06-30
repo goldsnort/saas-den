@@ -1,0 +1,150 @@
+    .col{
+        display:flex !important;
+        flex-direction:column !important;
+    }
+
+    .row{
+        display:flex !important;
+        flex-direction:row !important;
+    }
+
+    .auth-container{
+        width: 100vw !important;;
+        min-height:100vh;
+        display:grid;
+        grid-template-columns: 1.2fr 1fr;
+    }
+
+    .auth-right{
+        display:flex;
+        justify-content:center;
+        background-color:#1B4C9F;
+    }
+
+    .auth-right img {
+        max-width:auto;
+        max-height:200px;
+        margin-top:36vh;
+    }
+
+    .auth-left{
+        padding:0px 50px;
+        justify-content: center;
+        font-family:'Poppins',sans-serif;
+        font-size:0.9rem;
+    }
+
+    .auth-heading{
+        font-weight:700;
+        font-size:2.3rem;
+        color:#2E82F7;
+        font-family: 'Poppins',sans-serif;
+        margin-bottom:14px;
+    }
+
+    .auth-item{
+        font-weight: 400;
+        font-size:0.8rem;
+        color : #333333;
+        margin: 10px 0 0 2px;
+    }
+
+    .auth-form input{
+        max-width:500px;
+        border-radius:5px;
+        border-width: 1px;
+        padding: 10px 10px;
+    }
+
+    .auth-button {
+        max-width:500px;
+        margin-top:40px;
+        background-color:#1B4C9F;
+        color:white;
+        font-weight: 700;
+        font-size: 0.9rem;
+        border:none;
+        border-radius:5px;
+        padding:12px 0;
+        cursor: pointer;
+    }
+
+    .auth-text.row{
+        max-width:500px;
+        justify-content: center;
+        font-weight:400;
+        font-size:0.8rem;
+        margin-top:10px;
+    }
+
+    .g-auth{
+        max-width:500px;
+        justify-content:center;
+        align-items:center;
+        font-weight:400;
+        font-size:0.8rem;
+    }
+
+    .g-auth img{
+        max-width:30px;
+        max-height:30px;
+    }
+
+    .blue-text{
+        color:#005EB5;
+    }
+
+    .gray{
+        background-color:#8E8E8E;
+    }
+
+    .auth-sub-heading{
+        font-weight:500;
+        margin-top:10px;
+    }
+
+    #new-sso-form, #new-exp-form, #okta-api-form{
+        max-width:500px;
+    }
+
+
+    #new-sso-form div input, #new-exp-form div input, #okta-api-form div input{
+        width:calc(100% - 120px);
+    }
+
+    .auth-sub-text{
+        margin-top:3px;
+        font-weight:400;
+    }
+
+    .auth-button.small{
+        margin-top:0;
+        margin-left:20px;
+        padding: 12px 25px;
+    }
+
+    .okta-help{
+        max-width:500px;    
+        align-items: center;
+        margin-bottom:15px;
+    }
+
+    .okta-help-item{
+        background:#2E82F7;
+        color:white;
+        width:500px;
+        text-align: center;
+        padding:10px 5px;
+        margin: 12px 0;
+        border-radius:5px;
+    }
+
+    .otp-input input{
+        margin-right:16px;   
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .mb-20{
+        margin-bottom:20px;
+    }
