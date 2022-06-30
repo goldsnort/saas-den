@@ -26,7 +26,10 @@ function Signup() {
           <input type="password" required />
           <label className="auth-item">Confirm Password</label>
           <input type="password" required />
-          <button className="auth-button"> Sign Up</button>
+          <Link to="/dashboard" className="auth-button">
+            {" "}
+            Sign Up
+          </Link>
         </form>
         <div className="auth-text row">
           <div>Already a member?&nbsp;</div>

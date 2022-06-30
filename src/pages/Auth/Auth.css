@@ -67,6 +67,8 @@
         border-radius:5px;
         padding:12px 0;
         cursor: pointer;
+        text-align:center;
+        text-decoration:none;
     }
 
     .auth-text.row{
