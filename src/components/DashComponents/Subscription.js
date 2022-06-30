@@ -25,7 +25,7 @@ function Subscription() {
     },
     {
       appId: "netflix_india",
-      subname: "Netflix",
+      subname: "Adobe Pro",
       Amount: "6.8",
       noOfLicense: "4",
       nextRenewal: "10/08/2022",
@@ -54,7 +54,7 @@ function Subscription() {
     },
     {
       appId: "amazon-prime",
-      subname: "Amazon Prime",
+      subname: "Office 365",
       Amount: "2.27",
       noOfLicense: "5",
       nextRenewal: "05/08/2022",
@@ -69,7 +69,7 @@ function Subscription() {
     },
     {
       appId: "spotify-premium",
-      subname: "Spotify Premium",
+      subname: "Notion Premium",
       Amount: "2.28",
       noOfLicense: "5",
       nextRenewal: "01/08/2022",

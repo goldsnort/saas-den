@@ -12,9 +12,9 @@ function Employees() {
       empName: "Rushant",
       empSub: [
         "Figma",
-        "Netflix",
+        "Adobe Pro",
         "Google One Storage",
-        "Amazon Prime",
+        "Office 365",
         "Spotify Premium",
       ],
     },
@@ -74,7 +74,7 @@ function Employees() {
               <div>Remove</div>
             </div>
             <div className="sub-list row">
-              <div>Netflix</div>
+              <div>Adobe Pro</div>
               <div>Remove</div>
             </div>
             <div className="sub-list row">
@@ -82,11 +82,11 @@ function Employees() {
               <div>Remove</div>
             </div>
             <div className="sub-list row">
-              <div>Amazon Prime</div>
+              <div>Office 365</div>
               <div>Remove</div>
             </div>
             <div className="sub-list row">
-              <div>Spotify premium</div>
+              <div>Notion Premium</div>
               <div>Remove</div>
             </div>
             <div className="sub-list row">
@@ -109,7 +109,7 @@ function Employees() {
               <div>Remove</div>
             </div>
             <div className="sub-list row">
-              <div>Netflix</div>
+              <div>Adobe Pro</div>
               <div>Remove</div>
             </div>
             <div className="sub-list row">
@@ -117,7 +117,7 @@ function Employees() {
               <div>Remove</div>
             </div>
             <div className="sub-list row">
-              <div>Spotify premium</div>
+              <div>Notion Premium</div>
               <div>Remove</div>
             </div>
             <div className="sub-list row">
@@ -140,11 +140,11 @@ function Employees() {
               <div>Remove</div>
             </div>
             <div className="sub-list row">
-              <div>Amazon Prime</div>
+              <div>Office 365</div>
               <div>Remove</div>
             </div>
             <div className="sub-list row">
-              <div>Spotify premium</div>
+              <div>Notion Premium</div>
               <div>Remove</div>
             </div>
             <div className="sub-list row">
@@ -167,11 +167,11 @@ function Employees() {
               <div>Remove</div>
             </div>
             <div className="sub-list row">
-              <div>Amazon Prime</div>
+              <div>Office 365</div>
               <div>Remove</div>
             </div>
             <div className="sub-list row">
-              <div>Spotify premium</div>
+              <div>Notion Premium</div>
               <div>Remove</div>
             </div>
             <div className="sub-list row">
@@ -194,11 +194,11 @@ function Employees() {
               <div>Remove</div>
             </div>
             <div className="sub-list row">
-              <div>Amazon Prime</div>
+              <div>Office 365</div>
               <div>Remove</div>
             </div>
             <div className="sub-list row">
-              <div>Spotify premium</div>
+              <div>Notion Premium</div>
               <div>Remove</div>
             </div>
             <div className="sub-list row">
@@ -221,11 +221,11 @@ function Employees() {
               <div>Remove</div>
             </div>
             <div className="sub-list row">
-              <div>Amazon Prime</div>
+              <div>Office 365</div>
               <div>Remove</div>
             </div>
             <div className="sub-list row">
-              <div>Spotify premium</div>
+              <div>Notion Premium</div>
               <div>Remove</div>
             </div>
             <div className="sub-list row">
