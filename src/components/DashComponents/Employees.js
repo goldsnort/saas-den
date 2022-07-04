@@ -7,19 +7,6 @@ import { HiOutlineCash } from "react-icons/hi";
 function Employees() {
   const [username, setUsername] = useState("Rushant");
 
-  let empData = [
-    {
-      empName: "Rushant",
-      empSub: [
-        "Figma",
-        "Adobe Pro",
-        "Google One Storage",
-        "Office 365",
-        "Spotify Premium",
-      ],
-    },
-  ];
-
   return (
     <div>
       <div className="dash-top">

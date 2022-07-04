@@ -119,7 +119,7 @@ function Subscription() {
   abc();
 
   function handleDSub(id) {
-    let newData = dataState.filter((ele) => ele.appId != id);
+    let newData = dataState.filter((ele) => ele.appId !== id);
     setDataState(newData);
   }
 
@@ -164,7 +164,7 @@ function Subscription() {
         {dataState.map((ele, i) => {
           return (
             <div
-              id={i}
+              key={i}
               className="sub-container col"
               onClick={(e) => {
                 e.target.parentElement.classList.toggle("abc");
@@ -209,7 +209,6 @@ function Subscription() {
                     (ele.activeLicense / ele.noOfLicense) * 100
                   )}
                 />
-                {console.log(ele.subname, ele.activeLicense / ele.noOfLicense)}
                 <button className="view-employees">View Employees</button>
               </div>
             </div>

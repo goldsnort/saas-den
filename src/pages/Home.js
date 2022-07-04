@@ -1,7 +1,7 @@
 import { React, useRef } from "react";
 import "./Home.css";
 import Footer from "../components/Footer/Footer";
-import { toast, ToastContainer } from "react-toastify";
+import { toast } from "react-toastify";
 import Slider from "../components/Slider/Slider";
 import Navbar from "../components/Navbar/Navbar";
 
@@ -19,7 +19,6 @@ function Home() {
   return (
     <div className="home">
       <Navbar />
-      <ToastContainer />
       <div className="background-ellipse"></div>
       <div className="background-ellipse-2"></div>
       <div className="background-lines"></div>

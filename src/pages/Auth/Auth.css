@@ -150,3 +150,8 @@
     .mb-20{
         margin-bottom:20px;
     }
+
+    .err{
+        font-size:0.6rem;
+        color:red;
+    }
