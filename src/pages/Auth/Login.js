@@ -79,7 +79,7 @@ function Login() {
         if (res.ok === true) {
           console.log("login was successful, now redirecting");
           console.log(res);
-          // window.location.href = `${res.url}`;
+          window.location.href = `${res.url}`;
         } else {
           notify();
         }
