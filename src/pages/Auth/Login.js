@@ -60,8 +60,16 @@ function Login() {
     e.preventDefault();
     console.log("login function ran");
     fetch("https://saasden-backend.herokuapp.com/login", {
+      // mode: "no-cors",
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": [
+          "https://saasden-backend.herokuapp.com",
+          "https://login.xero.com",
+        ],
+      },
+      credentials: "include",
       body: JSON.stringify({
         username: `${input.username}`,
         password: `${input.password}`,
@@ -69,11 +77,23 @@ function Login() {
     })
       .then((res) => {
         if (res.ok === true) {
-          console.log("the login function is working now");
+          console.log("login was successful, now redirecting");
+          console.log(res);
+          // window.location.href = `${res.url}`;
         } else {
           notify();
         }
       })
+      // .then(() => {
+      //   fetch("https://saasden-backend.herokuapp.com/cookies")
+      //     .then((response) => {
+      //       console.log(response);
+      //       return response.json();
+      //     })
+      //     .then((data) => {
+      //       console.log(data);
+      //     });
+      // })
       .catch((err) => {
         console.log(err);
         alert("login failed, please try a different username");
