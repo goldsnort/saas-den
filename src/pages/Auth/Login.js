@@ -59,7 +59,6 @@ function Login() {
     e.preventDefault();
     console.log("login function ran");
     fetch("http://localhost:3001/login", {
-      // mode: "no-cors",
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -87,7 +86,7 @@ function Login() {
         if (data.token) {
           localStorage.setItem("username", input.username);
           localStorage.setItem("token", data.token);
-          navigate("/login-exp");
+          navigate("/login-sso");
         }
       })
       .catch((err) => {
