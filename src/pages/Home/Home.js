@@ -1,9 +1,9 @@
 import { React, useRef } from "react";
 import "./Home.css";
-import Footer from "../components/Footer/Footer";
+import Footer from "../../components/Footer/Footer";
 import { toast } from "react-toastify";
-import Slider from "../components/Slider/Slider";
-import Navbar from "../components/Navbar/Navbar";
+import Slider from "../../components/Slider/Slider";
+import Navbar from "../../components/Navbar/Navbar";
 
 function Home() {
   const inputRef = useRef();
@@ -105,7 +105,7 @@ function Home() {
         </div>
         <img
           className="plans-blur-pic"
-          src={require("../components/images/blur.png")}
+          src={require("../../components/images/blur.png")}
           alt=""
         ></img>
       </section>

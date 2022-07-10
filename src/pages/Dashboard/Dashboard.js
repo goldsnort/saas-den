@@ -1,17 +1,252 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
+import { toast } from "react-toastify";
 import Navbar from "../../components/Navbar/Navbar";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import "./Dashboard.css";
 
 function Dashboard() {
+  const [subData, setSubData] = useState(null);
+  const [isSubPending, setIsSubPending] = useState(true);
+  const [subError, setSubError] = useState(null);
+  const [empData, setEmpData] = useState(null);
+  const [isEmpPending, setIsEmpPending] = useState(true);
+  const [empError, setEmpError] = useState(null);
+  const [amountSpent, setAmountSpent] = useState("-");
+  const [save, setSave] = useState("-");
+  const [num, setNum] = useState("-");
+  const [render, setRender] = useState(false);
+  const [username, setUsername] = useState(
+    localStorage.getItem("username")
+      ? localStorage.getItem("username")
+      : "username"
+  );
+
+  const notify = (e) => {
+    console.log(e);
+    toast.error("Error in updation, please try again");
+  };
+
+  function calcHead(d) {
+    let amountSpent1 = 0;
+    let save1 = 0;
+    for (let e of d) {
+      amountSpent1 += e.total_amount;
+      save1 +=
+        (e.licences_purchased - e.licences_used) *
+        (e.total_amount / e.licences_purchased);
+    }
+    setAmountSpent(amountSpent1);
+    setSave(save1);
+    setNum(d.length);
+  }
+
+  function fetchSub() {
+    fetch("http://localhost:3001/subscription", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: localStorage.getItem("token"),
+      },
+      credentials: "include",
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw Error("could not fetch the subData (subscription request)");
+        }
+        return res.json();
+      })
+      .then((d) => {
+        setSubData(d);
+        calcHead(d);
+        setIsSubPending(false);
+        setSubError(null);
+      })
+      .catch((err) => {
+        setIsSubPending(false);
+        setSubError(err.message);
+        console.log(err);
+      });
+  }
+
+  function fetchEmp() {
+    fetch("http://localhost:3001/employee", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        token: localStorage.getItem("token"),
+      },
+      credentials: "include",
+    })
+      .then((res) => {
+        if (!res.ok) {
+          throw Error("could not fetch the empData (employee request)");
+        }
+        return res.json();
+      })
+      .then((d) => {
+        setEmpData(d);
+        setIsEmpPending(false);
+        setEmpError(null);
+      })
+      .catch((err) => {
+        setIsEmpPending(false);
+        setEmpError(err.message);
+        console.log(err);
+      });
+  }
+
+  function handleDelSub(appID) {
+    fetch("http://localhost:3001/subscription/app/deactivate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": [
+          "https://saasden-backend.herokuapp.com",
+          "http://localhost:3001",
+          "https://login.xero.com",
+        ],
+        token: localStorage.getItem("token"),
+      },
+      credentials: "include",
+      body: JSON.stringify({
+        appID: `${appID}`,
+      }),
+    })
+      .then((res) => {
+        if (res.ok === true) {
+          console.log("deletion of the sub was successful");
+          setSubData(null);
+          setEmpData(null);
+          setIsEmpPending(true);
+          setIsSubPending(true);
+          setSubError(null);
+          setEmpError(null);
+          setRender(!render);
+        } else {
+          notify();
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  function handleAddSub(appID) {
+    fetch("http://localhost:3001/subscription/app/activate", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": [
+          "https://saasden-backend.herokuapp.com",
+          "http://localhost:3001",
+          "https://login.xero.com",
+        ],
+        token: localStorage.getItem("token"),
+      },
+      credentials: "include",
+      body: JSON.stringify({
+        appID: `${appID}`,
+      }),
+    })
+      .then((res) => {
+        if (res.ok === true) {
+          console.log("activation of the sub was successful");
+          setSubData(null);
+          setEmpData(null);
+          setIsEmpPending(true);
+          setIsSubPending(true);
+          setSubError(null);
+          setEmpError(null);
+          setRender(!render);
+        } else {
+          notify();
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  function handleDelEmpSub(appID, userID) {
+    fetch("http://localhost:3001/subscription/employee/remove", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": [
+          "https://saasden-backend.herokuapp.com",
+          "http://localhost:3001",
+          "https://login.xero.com",
+        ],
+        token: localStorage.getItem("token"),
+      },
+      credentials: "include",
+      body: JSON.stringify({
+        appID: `${appID}`,
+        usrID: `${userID}`,
+      }),
+    })
+      .then((res) => {
+        if (res.ok === true) {
+          console.log(
+            "Removal of the employee from this subscription was successful"
+          );
+          setSubData(null);
+          setEmpData(null);
+          setIsEmpPending(true);
+          setIsSubPending(true);
+          setSubError(null);
+          setEmpError(null);
+          setRender(!render);
+        } else {
+          notify();
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
+
+  useEffect(() => {
+    console.log("loading dashboard");
+    fetchSub();
+    fetchEmp();
+  }, [render]);
+
   return (
     <div className="dash-container">
       <Sidebar />
       <div className="dash-right col">
         <Navbar />
         <hr className="dashtop-hr" />
-        <Outlet />
+        <Outlet
+          context={{
+            subData,
+            setSubData,
+            isSubPending,
+            setIsSubPending,
+            subError,
+            setSubError,
+            empData,
+            setEmpData,
+            isEmpPending,
+            setIsEmpPending,
+            empError,
+            setEmpError,
+            amountSpent,
+            setAmountSpent,
+            save,
+            setSave,
+            num,
+            setNum,
+            fetchSub,
+            username,
+            setRender,
+            handleDelSub,
+            handleAddSub,
+            handleDelEmpSub,
+          }}
+        />
       </div>
     </div>
   );

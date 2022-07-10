@@ -1,10 +1,18 @@
 import React from "react";
 
-function handleEXPLogin() {
-  console.log("hui hui");
-}
-
 function LoginEXP() {
+  function handleEXPLogin() {
+    fetch("http://localhost:3001/xero")
+      .then((res) => {
+        if (res.ok === true) {
+          return res.json();
+        } else console.log("The login exp request to backend failed!!!");
+      })
+      .then((data) => {
+        window.location.href = `${data.url}`;
+      });
+  }
+
   return (
     <div className="auth-container">
       <div className="auth-left col">

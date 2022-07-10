@@ -23,7 +23,7 @@
 }
 
 .background-lines{
-    background:url("../components/images/image-removebg-preview.png");
+    background:url("../../components/images/image-removebg-preview.png");
     background-size:100%;
     background-repeat: no-repeat;
     z-index:-1;

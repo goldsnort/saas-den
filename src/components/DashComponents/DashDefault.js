@@ -1,17 +1,22 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import { MdSubscriptions } from "react-icons/md";
 import { FaSortAmountUpAlt } from "react-icons/fa";
 import { HiOutlineCash } from "react-icons/hi";
+import { useOutletContext } from "react-router-dom";
 
-function DashDefault() {
-  const [username, setUsername] = useState("Rushant");
+function DashDefault(props) {
+  const dashContext = useOutletContext();
+
+  useEffect(() => {
+    // TODO: IF THE LOCAL STORAGE DOESN'T HAVE TOKEN THEN WE REDIRECT TO THE HOMEPAGE
+  }, []);
 
   return (
     <div>
       <div className="dash-top">
         <div className="search-container row">
-          <div className="search-container-heading">Subscriptions</div>
+          <div className="search-container-heading">Dashboard</div>
           <div className="dash-top-search">
             <BiSearch />
             <input type="text" placeholder="Search for products" />
@@ -19,26 +24,26 @@ function DashDefault() {
           <button>Search</button>
         </div>
         <div className="info row">
-          <div className="dash-top-name">{username}</div>
+          <div className="dash-top-name">{dashContext.username}</div>
           <div className="dash-top-item row">
             <MdSubscriptions />
             <div>
-              <div className="">Subscriptions</div>
-              <div className="dash-price">6</div>
+              <div className="">Dashboard</div>
+              <div className="dash-price">{dashContext.num}</div>
             </div>
           </div>
           <div className="dash-top-item row">
             <FaSortAmountUpAlt />
             <div>
               <div className="">Amount Spent</div>
-              <div className="dash-price">$183.30</div>
+              <div className="dash-price">${dashContext.amountSpent}</div>
             </div>
           </div>
           <div className="dash-top-item row">
             <HiOutlineCash />
             <div>
               <div className="">Save Upto </div>
-              <div className="dash-price">$26.34</div>
+              <div className="dash-price">${dashContext.save}</div>
             </div>
           </div>
         </div>

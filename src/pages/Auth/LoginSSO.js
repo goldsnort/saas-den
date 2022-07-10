@@ -1,10 +1,13 @@
 import React from "react";
-
-function handleSSOLogin() {
-  console.log("kekw");
-}
+import { useNavigate } from "react-router-dom";
 
 function LoginSSO() {
+  const navigate = useNavigate();
+
+  function handleSSOLogin() {
+    navigate("/connect-sso");
+  }
+
   return (
     <div className="auth-container">
       <div className="auth-left col">

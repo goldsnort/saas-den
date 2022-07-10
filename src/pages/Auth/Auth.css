@@ -110,7 +110,7 @@
     }
 
 
-    #new-sso-form div input, #new-exp-form div input, #okta-api-form div input{
+    #new-sso-form div input, #new-exp-form div input{
         width:calc(100% - 120px);
     }
 
@@ -145,6 +145,19 @@
         margin-right:16px;   
         width: 30px !important;
         height: 30px !important;
+    }
+
+    #okta-api-form div {
+        align-items: center;
+    }
+
+    #okta-api-form div input{
+        font-family:'Poppins',sans-serif;
+        text-align: center;
+        width:100%;
+        margin:9px 5px;
+        margin-top:0;
+        padding:10px 5px;
     }
 
     .mb-20{

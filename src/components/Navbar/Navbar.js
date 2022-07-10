@@ -1,10 +1,11 @@
 import { useState, React } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { Link as SLink } from "react-scroll";
 import { FiMenu } from "react-icons/fi";
 
 function Navbar() {
+  const navigate = useNavigate();
   const [click, setClick] = useState(false);
   const [navbar, setNavbar] = useState(false);
 
@@ -20,6 +21,21 @@ function Navbar() {
     if (window.scrollY >= 65) {
       setNavbar(true);
     } else setNavbar(false);
+  };
+
+  const handleSignout = () => {
+    localStorage.clear();
+    fetch("http://localhost:3001/logout", {
+      method: "GET",
+      credentials: "include",
+    }).then((res) => {
+      if (!res.ok) {
+        console.log("error!!! logout failed");
+      } else {
+        console.log("successfully logged out");
+      }
+    });
+    navigate("/");
   };
 
   window.addEventListener("scroll", changeBackground);
@@ -81,18 +97,18 @@ function Navbar() {
 
             <SLink
               activeClass="active"
-              to="home"
+              to="about-us"
               spy={true}
               smooth={true}
               duration={500}
               onClick={negateClick}
             >
-              <Link to="/">Resources</Link>
+              <Link to="/">About us</Link>
             </SLink>
 
             <SLink
               activeClass="active"
-              to="about-us"
+              to="home"
               spy={true}
               smooth={true}
               duration={500}
@@ -102,9 +118,25 @@ function Navbar() {
             </SLink>
           </div>
           <div className="navbar-btn">
-            <button onClick={negateClick} className="sign-out-btn">
-              Sign Out
-            </button>
+            {localStorage.getItem("token") ? (
+              <button
+                onClick={() => {
+                  negateClick();
+                  handleSignout();
+                }}
+              >
+                Sign Out
+              </button>
+            ) : (
+              <button
+                onClick={() => {
+                  negateClick();
+                  navigate("/login");
+                }}
+              >
+                Login
+              </button>
+            )}
           </div>
         </div>
       </div>

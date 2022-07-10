@@ -1,13 +1,12 @@
 import { React, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import { useCookies, Cookies } from "react-cookie";
 
 function Login() {
-  const [cookies, setCookies] = useCookies();
   const navigate = useNavigate();
 
   const notify = (e) => {
+    console.log(e);
     toast.error("Failed login, please try again");
   };
 
@@ -59,13 +58,14 @@ function Login() {
   function handleLoginSubmit(e) {
     e.preventDefault();
     console.log("login function ran");
-    fetch("https://saasden-backend.herokuapp.com/login", {
+    fetch("http://localhost:3001/login", {
       // mode: "no-cors",
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": [
           "https://saasden-backend.herokuapp.com",
+          "http://localhost:3001",
           "https://login.xero.com",
         ],
       },
@@ -78,22 +78,18 @@ function Login() {
       .then((res) => {
         if (res.ok === true) {
           console.log("login was successful, now redirecting");
-          console.log(res);
-          window.location.href = `${res.url}`;
+          return res.json();
         } else {
           notify();
         }
       })
-      // .then(() => {
-      //   fetch("https://saasden-backend.herokuapp.com/cookies")
-      //     .then((response) => {
-      //       console.log(response);
-      //       return response.json();
-      //     })
-      //     .then((data) => {
-      //       console.log(data);
-      //     });
-      // })
+      .then((data) => {
+        if (data.token) {
+          localStorage.setItem("username", input.username);
+          localStorage.setItem("token", data.token);
+          navigate("/login-exp");
+        }
+      })
       .catch((err) => {
         console.log(err);
         alert("login failed, please try a different username");
@@ -133,10 +129,13 @@ function Login() {
             Sign Up
           </Link>
         </div>
-        <div className="g-auth row">
+
+        {/* SPACE FOR FIREBASE AUTHENTICATION */}
+
+        {/* <div className="g-auth row">
           <div>Login using </div>
           <img src={require("../../assets/g_icon.png")} alt="google_logo"></img>
-        </div>
+        </div> */}
       </div>
       <div className="auth-right">
         <img src={require("../../assets/saasden.png")} alt="saasden"></img>

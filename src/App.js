@@ -12,14 +12,14 @@ import Subscription from "./components/DashComponents/Subscription";
 import Employees from "./components/DashComponents/Employees";
 import Teams from "./components/DashComponents/Teams";
 import Visualize from "./components/DashComponents/Visualize";
-import Home from "./pages/Home";
-import {ToastContainer} from "react-toastify";
+import Home from "./pages/Home/Home";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
     <div className="App">
-    <ToastContainer/>
+      <ToastContainer />
       <Router>
         <Routes>
           <Route path="/" element={<Home />}></Route>

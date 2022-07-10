@@ -90,9 +90,12 @@ function Signup() {
 
   function handleSignupSubmit(e) {
     e.preventDefault();
-    fetch("https://saasden-backend.herokuapp.com/signup", {
+    fetch("http://localhost:3001/signup", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        token: localStorage.getItem("token"),
+      },
       body: JSON.stringify({
         username: `${input.username}`,
         name: `${input.username}`,
