@@ -38,7 +38,7 @@ function ConnectSSO() {
       }),
     }).then((res) => {
       if (res.ok === true) {
-        navigate("/dashboard");
+        navigate("/login-exp");
       }
     });
   }
