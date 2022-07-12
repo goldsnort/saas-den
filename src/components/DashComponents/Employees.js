@@ -4,7 +4,7 @@ import { MdSubscriptions } from "react-icons/md";
 import { FaSortAmountUpAlt } from "react-icons/fa";
 import { HiOutlineCash } from "react-icons/hi";
 import { useOutletContext } from "react-router-dom";
-import { BsChevronDown } from "react-icons/bs";
+import EmpLi from "./EmpLi";
 
 function Employees() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,34 +14,10 @@ function Employees() {
     arr[i] = null;
   }
 
-  function getSubs(userID) {
-    let data;
-    fetch(`http://localhost:3001/employee/apps?${userID}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        token: localStorage.getItem("token"),
-      },
-      credentials: "include",
-    })
-      .then((res) => {
-        if (!res.ok) {
-          throw Error("could not fetch the empData (employee request)");
-        }
-        return res.json();
-      })
-      .then((d) => {
-        data = d;
-        console.log(d);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    return data;
-  }
   useEffect(() => {
     // TODO:AUTHORIZATION HERE
   }, []);
+
   return (
     <div>
       <div className="dash-top">
@@ -88,64 +64,30 @@ function Employees() {
       <div className="dash-outlet">
         <div className="emp-container col">
           {dashContext.isEmpPending && <div>Loading resources...</div>}
-          {dashContext.empError && <div>{dashContext.empError}</div>}
+          {dashContext.empError && (
+            <div className="loading-error-txt">
+              Error Loading Resources... Please Refresh
+            </div>
+          )}
           {dashContext.empData &&
-            dashContext.empData
-              .filter((val) => {
+            dashContext.empData.filter((val) => {
                 if (searchTerm === "") {
                   return val;
                 } else if (
-                  val.appName.toLowerCase().includes(searchTerm.toLowerCase())
+                  val.name.toLowerCase().includes(searchTerm.toLowerCase())
                 ) {
                   return val;
                 }
               })
               .map((ele, i) => {
-                getSubs(ele.userID);
                 return (
-                  <div key={i} className="emp-info">
-                    <div className="sub-top row">
-                      <div className="sub-name row">
-                        <BsChevronDown
-                          size={25}
-                          className="ai-down"
-                          onClick={(e) => {
-                            e.target.parentElement.parentElement.parentElement.classList.toggle(
-                              "abcd"
-                            );
-                          }}
-                        />
-                        {ele.name}
-                      </div>
-                      <div></div>
-                    </div>
-                    <div className="sub-list col">
-                      <div className="sub-li row">
-                        <div>Figma</div>
-                        <button className="remove-sub-emp">Remove</button>
-                      </div>
-                      <div className="sub-li row">
-                        <div>Adobe Pro</div>
-                        <button className="remove-sub-emp">Remove</button>
-                      </div>
-                      <div className="sub-li row">
-                        <div>Google One Storage</div>
-                        <button className="remove-sub-emp">Remove</button>
-                      </div>
-                      <div className="sub-li row">
-                        <div>Office 365</div>
-                        <button className="remove-sub-emp">Remove</button>
-                      </div>
-                      <div className="sub-li row">
-                        <div>Notion Premium</div>
-                        <button className="remove-sub-emp">Remove</button>
-                      </div>
-                      <div className="sub-li row">
-                        <div>Linkedin Premium</div>
-                        <button className="remove-sub-emp">Remove</button>
-                      </div>
-                    </div>
-                  </div>
+                  <EmpLi
+                    name={ele.name}
+                    userID={ele.userID}
+                    Key={i}
+                    handleDelEmpSub={dashContext.handleDelEmpSub}
+                    handleAddSub={dashContext.handleAddSub}
+                  />
                 );
               })}
         </div>

@@ -1,12 +1,18 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import OtpInput from "react-otp-input";
+import { useNavigate } from "react-router-dom";
 
 function ConnectEXP() {
+  const navigate = useNavigate();
   const [otp, setOtp] = useState("");
 
   function handleEXPConnect(e) {
     e.preventDefault();
   }
+
+  useEffect(() => {
+    navigate("/");
+  }, [navigate]);
 
   return (
     <div className="auth-container">

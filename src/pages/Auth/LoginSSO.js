@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function LoginSSO() {
@@ -7,6 +7,12 @@ function LoginSSO() {
   function handleSSOLogin() {
     navigate("/connect-sso");
   }
+
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      navigate("/");
+    }
+  }, [navigate]);
 
   return (
     <div className="auth-container">

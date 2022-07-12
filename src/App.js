@@ -13,6 +13,7 @@ import Employees from "./components/DashComponents/Employees";
 import Teams from "./components/DashComponents/Teams";
 import Visualize from "./components/DashComponents/Visualize";
 import Home from "./pages/Home/Home";
+import Missing from "./pages/Missing/Missing";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -36,6 +37,7 @@ function App() {
             <Route path="teams" element={<Teams />}></Route>
             <Route path="visualize" element={<Visualize />}></Route>
           </Route>
+          <Route path="*" element={<Missing />}></Route>
         </Routes>
       </Router>
     </div>

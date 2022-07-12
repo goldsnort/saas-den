@@ -1,6 +1,8 @@
-import React from "react";
+import { React, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function LoginEXP() {
+  const navigate = useNavigate();
   function handleEXPLogin() {
     fetch("http://localhost:3001/xero")
       .then((res) => {
@@ -12,6 +14,12 @@ function LoginEXP() {
         window.location.href = `${data.url}`;
       });
   }
+
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      navigate("/");
+    }
+  }, [navigate]);
 
   return (
     <div className="auth-container">

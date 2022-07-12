@@ -60,10 +60,17 @@ function Subscription() {
       <hr className="dashtop-hr bot" />
       <div className="dash-outlet">
         {dashContext.isSubPending && <div>Loading resources...</div>}
-        {dashContext.subError && <div>{dashContext.subError}</div>}
+        {dashContext.subError && (
+          <div>
+            {
+              <div className="loading-error-txt">
+                Error Loading resources...Please Refresh
+              </div>
+            }
+          </div>
+        )}
         {dashContext.subData &&
-          dashContext.subData
-            .filter((val) => {
+          dashContext.subData.filter((val) => {
               if (searchTerm === "") {
                 return val;
               } else if (

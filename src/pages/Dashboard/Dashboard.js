@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Outlet } from "react-router-dom";
+import { useNavigate, Outlet } from "react-router-dom";
 import { toast } from "react-toastify";
 import Navbar from "../../components/Navbar/Navbar";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import "./Dashboard.css";
 
 function Dashboard() {
+  const navigate = useNavigate();
   const [subData, setSubData] = useState(null);
   const [isSubPending, setIsSubPending] = useState(true);
   const [subError, setSubError] = useState(null);
@@ -51,8 +52,12 @@ function Dashboard() {
       credentials: "include",
     })
       .then((res) => {
-        if (!res.ok) {
-          throw Error("could not fetch the subData (subscription request)");
+        if (res.status === 420) {
+          window.location.href = "http://localhost:3000/login-sso";
+        } else if (res.status === 421) {
+          window.location.href = "http://localhost:3001/xero/refreshXeroToken";
+        } else if (res.status === 422) {
+          window.location.href = "http://localhost:3000/login-exp";
         }
         return res.json();
       })
@@ -79,8 +84,12 @@ function Dashboard() {
       credentials: "include",
     })
       .then((res) => {
-        if (!res.ok) {
-          throw Error("could not fetch the empData (employee request)");
+        if (res.status === 420) {
+          window.location.href = "http://localhost:3000/login-sso";
+        } else if (res.status === 421) {
+          window.location.href = "http://localhost:3001/xero/refreshXeroToken";
+        } else if (res.status === 422) {
+          window.location.href = "http://localhost:3000/login-exp";
         }
         return res.json();
       })
@@ -114,6 +123,13 @@ function Dashboard() {
       }),
     })
       .then((res) => {
+        if (res.status === 420) {
+          window.location.href = "http://localhost:3000/login-sso";
+        } else if (res.status === 421) {
+          window.location.href = "http://localhost:3001/xero/refreshXeroToken";
+        } else if (res.status === 422) {
+          window.location.href = "http://localhost:3000/login-exp";
+        }
         if (res.ok === true) {
           console.log("deletion of the sub was successful");
           setSubData(null);
@@ -150,6 +166,13 @@ function Dashboard() {
       }),
     })
       .then((res) => {
+        if (res.status === 420) {
+          window.location.href = "http://localhost:3000/login-sso";
+        } else if (res.status === 421) {
+          window.location.href = "http://localhost:3001/xero/refreshXeroToken";
+        } else if (res.status === 422) {
+          window.location.href = "http://localhost:3000/login-exp";
+        }
         if (res.ok === true) {
           console.log("activation of the sub was successful");
           setSubData(null);
@@ -187,6 +210,13 @@ function Dashboard() {
       }),
     })
       .then((res) => {
+        if (res.status === 420) {
+          window.location.href = "http://localhost:3000/login-sso";
+        } else if (res.status === 421) {
+          window.location.href = "http://localhost:3001/xero/refreshXeroToken";
+        } else if (res.status === 422) {
+          window.location.href = "http://localhost:3000/login-exp";
+        }
         if (res.ok === true) {
           console.log(
             "Removal of the employee from this subscription was successful"
@@ -208,10 +238,13 @@ function Dashboard() {
   }
 
   useEffect(() => {
-    console.log("loading dashboard");
-    fetchSub();
-    fetchEmp();
-  }, [render]);
+    if (localStorage.getItem("token")) {
+      fetchSub();
+      fetchEmp();
+    } else {
+      navigate("/");
+    }
+  }, [render, navigate]);
 
   return (
     <div className="dash-container">

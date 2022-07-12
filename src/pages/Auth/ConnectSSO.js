@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import { FaLongArrowAltDown } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 
@@ -38,10 +38,16 @@ function ConnectSSO() {
       }),
     }).then((res) => {
       if (res.ok === true) {
-        navigate("/login-exp");
+        navigate("/dashboard");
       }
     });
   }
+
+  useEffect(() => {
+    if (!localStorage.getItem("token")) {
+      navigate("/");
+    }
+  }, [navigate]);
 
   return (
     <div className="auth-container">

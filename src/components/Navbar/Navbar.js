@@ -59,7 +59,7 @@ function Navbar() {
         <Link to="/" className="navbar-logo">
           <img
             className="navbar-logo-img"
-            src={require("../../assets/saasden.png")}
+            src={require("../../assets/logo_saasden.png")}
             alt="logo"
             onClick={negateClick}
           ></img>

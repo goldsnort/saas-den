@@ -4,8 +4,8 @@ import "./Footer.css";
 function Footer() {
   return (
     <>
-      <div className="footer">
-        <div className="row">
+      <div className="footer col">
+        <div className="icon row">
           <a href="https://www.linkedin.com/company/saaasden/">
             <i className="fab fa-linkedin"></i>
           </a>

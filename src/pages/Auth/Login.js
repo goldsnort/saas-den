@@ -57,7 +57,6 @@ function Login() {
 
   function handleLoginSubmit(e) {
     e.preventDefault();
-    console.log("login function ran");
     fetch("http://localhost:3001/login", {
       method: "POST",
       headers: {
@@ -86,7 +85,7 @@ function Login() {
         if (data.token) {
           localStorage.setItem("username", input.username);
           localStorage.setItem("token", data.token);
-          navigate("/login-sso");
+          navigate("/dashboard");
         }
       })
       .catch((err) => {

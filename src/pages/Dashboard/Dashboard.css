@@ -187,7 +187,7 @@ text-decoration:none;}
     align-items: center;
     font-family:'Poppins',sans-serif;
     text-align: center;
-    height:calc(100vh - 238px);
+    height:calc(100vh - 250px);
 }
 
 .dash-default-1{
@@ -262,7 +262,7 @@ text-decoration:none;}
 }
 
 .sub-container{
-    height:48px;
+    height:46px;
     overflow-y:hidden; 
     border-radius:5px;
 }
