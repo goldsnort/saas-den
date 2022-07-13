@@ -29,7 +29,7 @@ function App() {
           <Route path="/login-sso" element={<LoginSSO />}></Route>
           <Route path="/connect-sso" element={<ConnectSSO />}></Route>
           <Route path="/login-exp" element={<LoginEXP />}></Route>
-          <Route path="/connect-exp" element={<ConnectEXP />}></Route>
+          {/* <Route path="/connect-exp" element={<ConnectEXP />}></Route> */}
           <Route path="/dashboard" element={<Dashboard />}>
             <Route path="" element={<DashDefault />}></Route>
             <Route path="subscription" element={<Subscription />}></Route>
