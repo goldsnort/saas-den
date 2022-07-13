@@ -6,7 +6,7 @@ function Sidebar() {
   return (
     <div className="sidebar-container col">
       {/* TODO:INSERT THE COMPANY LOGO HERE */}
-      <img src={require("../../assets/saasden.png")} alt="company logo" />
+      <img src={require("../../assets/logo_saasden.png")} alt="company logo" />
       <NavLink to="/dashboard" className="sidebar-dash" exact="true">
         <MdDashboard
           style={{
