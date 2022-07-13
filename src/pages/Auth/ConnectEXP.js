@@ -11,7 +11,7 @@ function ConnectEXP() {
   }
 
   useEffect(() => {
-    navigate("/");
+    navigate("/login");
   }, [navigate]);
 
   return (

@@ -4,13 +4,17 @@ import { MdSubscriptions } from "react-icons/md";
 import { FaSortAmountUpAlt } from "react-icons/fa";
 import { HiOutlineCash } from "react-icons/hi";
 import { useOutletContext } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function DashDefault(props) {
   const dashContext = useOutletContext();
 
+  const navigate = useNavigate();
   useEffect(() => {
-    // TODO: IF THE LOCAL STORAGE DOESN'T HAVE TOKEN THEN WE REDIRECT TO THE HOMEPAGE
-  }, []);
+    if (!localStorage.getItem("token")) {
+      navigate("/login");
+    }
+  }, [navigate]);
 
   return (
     <div>

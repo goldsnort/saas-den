@@ -15,9 +15,9 @@ function Subscription() {
   const navigate = useNavigate();
   useEffect(() => {
     if (!localStorage.getItem("token")) {
-      navigate("/");
+      navigate("/login");
     }
-  }, []);
+  }, [navigate]);
 
   return (
     <div>

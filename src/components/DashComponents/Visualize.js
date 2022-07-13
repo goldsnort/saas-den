@@ -5,7 +5,7 @@ function Visualize() {
   const navigate = useNavigate();
   useEffect(() => {
     if (!localStorage.getItem("token")) {
-      navigate("/");
+      navigate("/login");
     }
   }, [navigate]);
 

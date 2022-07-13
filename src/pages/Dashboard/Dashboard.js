@@ -242,7 +242,7 @@ function Dashboard() {
       fetchSub();
       fetchEmp();
     } else {
-      navigate("/");
+      navigate("/login");
     }
   }, [render, navigate]);
 
