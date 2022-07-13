@@ -6,7 +6,7 @@ function Teams() {
     if (!localStorage.getItem("token")) {
       navigate("/");
     }
-  }, []);
+  }, [navigate]);
   return (
     <div className="dash-outlet nothing col">
       <img src={require("../../assets/undraw.png")} />
