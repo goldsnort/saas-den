@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "./Navbar.css";
 import { Link as SLink } from "react-scroll";
 import { FiMenu } from "react-icons/fi";
+import { baseURL } from "../../api";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ function Navbar() {
 
   const handleSignout = () => {
     localStorage.clear();
-    fetch("http://localhost:4000/logout", {
+    fetch(`${baseURL}/logout`, {
       method: "GET",
       credentials: "include",
     }).then((res) => {

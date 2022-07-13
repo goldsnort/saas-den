@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { baseURL } from "../../api";
 
 function Login() {
   const navigate = useNavigate();
@@ -57,7 +58,7 @@ function Login() {
 
   function handleLoginSubmit(e) {
     e.preventDefault();
-    fetch("http://localhost:4000/login", {
+    fetch(`${baseURL}/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -65,6 +66,7 @@ function Login() {
           "https://saasden-backend.herokuapp.com",
           "http://localhost:4000",
           "https://login.xero.com",
+          `${baseURL}`,
         ],
       },
       credentials: "include",

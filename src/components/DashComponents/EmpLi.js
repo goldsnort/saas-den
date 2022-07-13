@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
+import { baseURL } from "../../api";
 
 function EmpLi(props) {
   const [data, setData] = useState(null);
@@ -9,7 +10,7 @@ function EmpLi(props) {
   function fetchEmpSub() {
     //   THIS FETCH WILL RETURN A LIST OF SUBSCRIPTIONS
     //   WITH THE FOLLOWING PARAMS appID, name, status
-    fetch(`http://localhost:3001/employee/apps?usrID=${props.userID}`, {
+    fetch(`${baseURL}/employee/apps?usrID=${props.userID}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

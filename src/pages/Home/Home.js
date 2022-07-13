@@ -7,7 +7,7 @@ import Navbar from "../../components/Navbar/Navbar";
 
 function Home() {
   const inputRef = useRef();
-
+  console.log(process.env);
   const notify = (e) => {
     inputRef.current.value = "";
     e.preventDefault();

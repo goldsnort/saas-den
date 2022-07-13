@@ -1,6 +1,7 @@
 import { React, useEffect, useState } from "react";
 import { FaLongArrowAltDown } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { baseURL } from "../../api";
 
 function ConnectSSO() {
   const navigate = useNavigate();
@@ -20,13 +21,14 @@ function ConnectSSO() {
 
   function handleOktaApi(e) {
     e.preventDefault();
-    fetch("http://localhost:4000/okta", {
+    fetch(`${baseURL}/okta`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": [
           "https://saasden-backend.herokuapp.com",
           "http://localhost:4000",
+          `${baseURL}`,
           "https://login.xero.com",
         ],
         token: localStorage.getItem("token"),

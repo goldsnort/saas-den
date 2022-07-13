@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import "./Auth.css";
+import { baseURL } from "../../api";
 
 function Signup() {
   const navigate = useNavigate();
@@ -90,7 +91,7 @@ function Signup() {
 
   function handleSignupSubmit(e) {
     e.preventDefault();
-    fetch("http://localhost:4000/signup", {
+    fetch(`${baseURL}/signup`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

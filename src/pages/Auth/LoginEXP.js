@@ -1,10 +1,11 @@
 import { React, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { baseURL } from "../../api";
 
 function LoginEXP() {
   const navigate = useNavigate();
   function handleEXPLogin() {
-    fetch("http://localhost:4000/xero")
+    fetch(`${baseURL}/xero`)
       .then((res) => {
         if (res.ok === true) {
           return res.json();
