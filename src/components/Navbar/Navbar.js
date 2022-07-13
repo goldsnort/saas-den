@@ -25,7 +25,7 @@ function Navbar() {
 
   const handleSignout = () => {
     localStorage.clear();
-    fetch("http://localhost:3001/logout", {
+    fetch("http://localhost:4000/logout", {
       method: "GET",
       credentials: "include",
     }).then((res) => {

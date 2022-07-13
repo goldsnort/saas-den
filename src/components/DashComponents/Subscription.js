@@ -6,13 +6,17 @@ import { HiOutlineCash } from "react-icons/hi";
 import ProgressBar from "@ramonak/react-progress-bar";
 import { useOutletContext } from "react-router-dom";
 import { BsChevronDown } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 function Subscription() {
   const [searchTerm, setSearchTerm] = useState("");
   const dashContext = useOutletContext();
 
+  const navigate = useNavigate();
   useEffect(() => {
-    // TODO:AUTHORIZATION HERE
+    if (!localStorage.getItem("token")) {
+      navigate("/");
+    }
   }, []);
 
   return (
@@ -70,7 +74,8 @@ function Subscription() {
           </div>
         )}
         {dashContext.subData &&
-          dashContext.subData.filter((val) => {
+          dashContext.subData
+            .filter((val) => {
               if (searchTerm === "") {
                 return val;
               } else if (

@@ -20,13 +20,13 @@ function ConnectSSO() {
 
   function handleOktaApi(e) {
     e.preventDefault();
-    fetch("http://localhost:3001/okta", {
+    fetch("http://localhost:4000/okta", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": [
           "https://saasden-backend.herokuapp.com",
-          "http://localhost:3001",
+          "http://localhost:4000",
           "https://login.xero.com",
         ],
         token: localStorage.getItem("token"),

@@ -5,6 +5,7 @@ import { FaSortAmountUpAlt } from "react-icons/fa";
 import { HiOutlineCash } from "react-icons/hi";
 import { useOutletContext } from "react-router-dom";
 import EmpLi from "./EmpLi";
+import { useNavigate } from "react-router-dom";
 
 function Employees() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -14,8 +15,11 @@ function Employees() {
     arr[i] = null;
   }
 
+  const navigate = useNavigate();
   useEffect(() => {
-    // TODO:AUTHORIZATION HERE
+    if (!localStorage.getItem("token")) {
+      navigate("/");
+    }
   }, []);
 
   return (
@@ -70,7 +74,8 @@ function Employees() {
             </div>
           )}
           {dashContext.empData &&
-            dashContext.empData.filter((val) => {
+            dashContext.empData
+              .filter((val) => {
                 if (searchTerm === "") {
                   return val;
                 } else if (

@@ -90,7 +90,7 @@ function Signup() {
 
   function handleSignupSubmit(e) {
     e.preventDefault();
-    fetch("http://localhost:3001/signup", {
+    fetch("http://localhost:4000/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

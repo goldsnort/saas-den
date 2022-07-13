@@ -43,7 +43,7 @@ function Dashboard() {
   }
 
   function fetchSub() {
-    fetch("http://localhost:3001/subscription", {
+    fetch("http://localhost:4000/subscription", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -53,11 +53,11 @@ function Dashboard() {
     })
       .then((res) => {
         if (res.status === 420) {
-          window.location.href = "http://localhost:3000/login-sso";
+          window.location.href = "http://localhost:4200/login-sso";
         } else if (res.status === 421) {
-          window.location.href = "http://localhost:3001/xero/refreshXeroToken";
+          window.location.href = "http://localhost:4000/xero/refreshXeroToken";
         } else if (res.status === 422) {
-          window.location.href = "http://localhost:3000/login-exp";
+          window.location.href = "http://localhost:4200/login-exp";
         }
         return res.json();
       })
@@ -75,7 +75,7 @@ function Dashboard() {
   }
 
   function fetchEmp() {
-    fetch("http://localhost:3001/employee", {
+    fetch("http://localhost:4000/employee", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -85,11 +85,11 @@ function Dashboard() {
     })
       .then((res) => {
         if (res.status === 420) {
-          window.location.href = "http://localhost:3000/login-sso";
+          window.location.href = "http://localhost:4200/login-sso";
         } else if (res.status === 421) {
-          window.location.href = "http://localhost:3001/xero/refreshXeroToken";
+          window.location.href = "http://localhost:4000/xero/refreshXeroToken";
         } else if (res.status === 422) {
-          window.location.href = "http://localhost:3000/login-exp";
+          window.location.href = "http://localhost:4200/login-exp";
         }
         return res.json();
       })
@@ -106,13 +106,13 @@ function Dashboard() {
   }
 
   function handleDelSub(appID) {
-    fetch("http://localhost:3001/subscription/app/deactivate", {
+    fetch("http://localhost:4000/subscription/app/deactivate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": [
           "https://saasden-backend.herokuapp.com",
-          "http://localhost:3001",
+          "http://localhost:4000",
           "https://login.xero.com",
         ],
         token: localStorage.getItem("token"),
@@ -124,11 +124,11 @@ function Dashboard() {
     })
       .then((res) => {
         if (res.status === 420) {
-          window.location.href = "http://localhost:3000/login-sso";
+          window.location.href = "http://localhost:4200/login-sso";
         } else if (res.status === 421) {
-          window.location.href = "http://localhost:3001/xero/refreshXeroToken";
+          window.location.href = "http://localhost:4000/xero/refreshXeroToken";
         } else if (res.status === 422) {
-          window.location.href = "http://localhost:3000/login-exp";
+          window.location.href = "http://localhost:4200/login-exp";
         }
         if (res.ok === true) {
           console.log("deletion of the sub was successful");
@@ -149,13 +149,13 @@ function Dashboard() {
   }
 
   function handleAddSub(appID) {
-    fetch("http://localhost:3001/subscription/app/activate", {
+    fetch("http://localhost:4000/subscription/app/activate", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": [
           "https://saasden-backend.herokuapp.com",
-          "http://localhost:3001",
+          "http://localhost:4000",
           "https://login.xero.com",
         ],
         token: localStorage.getItem("token"),
@@ -167,11 +167,11 @@ function Dashboard() {
     })
       .then((res) => {
         if (res.status === 420) {
-          window.location.href = "http://localhost:3000/login-sso";
+          window.location.href = "http://localhost:4200/login-sso";
         } else if (res.status === 421) {
-          window.location.href = "http://localhost:3001/xero/refreshXeroToken";
+          window.location.href = "http://localhost:4000/xero/refreshXeroToken";
         } else if (res.status === 422) {
-          window.location.href = "http://localhost:3000/login-exp";
+          window.location.href = "http://localhost:4200/login-exp";
         }
         if (res.ok === true) {
           console.log("activation of the sub was successful");
@@ -192,13 +192,13 @@ function Dashboard() {
   }
 
   function handleDelEmpSub(appID, userID) {
-    fetch("http://localhost:3001/subscription/employee/remove", {
+    fetch("http://localhost:4000/subscription/employee/remove", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": [
           "https://saasden-backend.herokuapp.com",
-          "http://localhost:3001",
+          "http://localhost:4000",
           "https://login.xero.com",
         ],
         token: localStorage.getItem("token"),
@@ -211,11 +211,11 @@ function Dashboard() {
     })
       .then((res) => {
         if (res.status === 420) {
-          window.location.href = "http://localhost:3000/login-sso";
+          window.location.href = "http://localhost:4200/login-sso";
         } else if (res.status === 421) {
-          window.location.href = "http://localhost:3001/xero/refreshXeroToken";
+          window.location.href = "http://localhost:4000/xero/refreshXeroToken";
         } else if (res.status === 422) {
-          window.location.href = "http://localhost:3000/login-exp";
+          window.location.href = "http://localhost:4200/login-exp";
         }
         if (res.ok === true) {
           console.log(
