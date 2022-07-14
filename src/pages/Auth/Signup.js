@@ -196,7 +196,12 @@ function Signup() {
           <img src={require("../../assets/g_icon.png")} alt="google_logo"></img>
         </div> */}
       </div>
-      <div className="auth-right">
+      <div
+        className="auth-right"
+        onClick={() => {
+          navigate("/");
+        }}
+      >
         <img src={require("../../assets/saasden.png")} alt="saasden"></img>
       </div>
     </div>

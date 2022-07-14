@@ -55,7 +55,12 @@ function LoginEXP() {
           &nbsp;to get on a call with our team to custom build it for you
         </p>
       </div>
-      <div className="auth-right">
+      <div
+        className="auth-right"
+        onClick={() => {
+          navigate("/");
+        }}
+      >
         <img src={require("../../assets/saasden.png")} alt="saasden"></img>
       </div>
     </div>

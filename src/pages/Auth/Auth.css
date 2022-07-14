@@ -25,6 +25,7 @@
         max-width:auto;
         max-height:200px;
         margin-top:36vh;
+        cursor:pointer;
     }
 
     .auth-left{

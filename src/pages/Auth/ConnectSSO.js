@@ -89,7 +89,13 @@ function ConnectSSO() {
         </form>
       </div>
       <div className="auth-right">
-        <img src={require("../../assets/saasden.png")} alt="saasden"></img>
+        <img
+          onClick={() => {
+            navigate("/");
+          }}
+          src={require("../../assets/saasden.png")}
+          alt="saasden"
+        ></img>
       </div>
     </div>
   );
