@@ -86,7 +86,7 @@ function Dashboard() {
     })
       .then((res) => {
         if (res.status === 420) {
-          navigate("login-sso");
+          navigate("/login-sso");
         } else if (res.status === 421) {
           window.location.href = `${baseURL}/xero/refreshXeroToken`;
         } else if (res.status === 422) {
@@ -126,7 +126,7 @@ function Dashboard() {
     })
       .then((res) => {
         if (res.status === 420) {
-          navigate("login-sso");
+          navigate("/login-sso");
         } else if (res.status === 421) {
           window.location.href = `${baseURL}/xero/refreshXeroToken`;
         } else if (res.status === 422) {
@@ -170,7 +170,7 @@ function Dashboard() {
     })
       .then((res) => {
         if (res.status === 420) {
-          navigate("login-sso");
+          navigate("/login-sso");
         } else if (res.status === 421) {
           window.location.href = `${baseURL}/xero/refreshXeroToken`;
         } else if (res.status === 422) {
