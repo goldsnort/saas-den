@@ -129,6 +129,11 @@ function Login() {
             Sign Up
           </Link>
         </div>
+        <div className="auth-text row">
+          <Link to="/" className="blue-text">
+            Go Back to Home
+          </Link>
+        </div>
 
         {/* SPACE FOR FIREBASE AUTHENTICATION */}
 
