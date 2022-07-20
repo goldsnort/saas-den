@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function LoginSSO() {
   const navigate = useNavigate();
@@ -39,6 +39,11 @@ function LoginSSO() {
           </a>
           &nbsp;to get on a call with our team to custom build it for you
         </p>
+        <div className="auth-text row">
+          <Link to="/" className="blue-text">
+            Go Back to Home
+          </Link>
+        </div>
       </div>
       <div
         className="auth-right"

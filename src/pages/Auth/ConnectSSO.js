@@ -1,6 +1,6 @@
 import { React, useEffect, useState } from "react";
 import { FaLongArrowAltDown } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { baseURL } from "../../api";
 
 function ConnectSSO() {
@@ -87,6 +87,11 @@ function ConnectSSO() {
             <button className="auth-button small">Submit</button>
           </div>
         </form>
+        <div className="auth-text row">
+          <Link to="/" className="blue-text">
+            Go Back to Home
+          </Link>
+        </div>
       </div>
       <div className="auth-right">
         <img
