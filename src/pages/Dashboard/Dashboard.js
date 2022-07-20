@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { useNavigate, Outlet } from "react-router-dom";
 import { toast } from "react-toastify";
 import Navbar from "../../components/Navbar/Navbar";
@@ -43,7 +43,7 @@ function Dashboard() {
     setNum(d.length);
   }
 
-  function fetchSub() {
+  const fetchSub = useCallback(() => {
     fetch(`${baseURL}/subscription`, {
       method: "GET",
       headers: {
@@ -73,9 +73,9 @@ function Dashboard() {
         setSubError(err.message);
         console.log(err);
       });
-  }
+  }, [navigate]);
 
-  function fetchEmp() {
+  const fetchEmp = useCallback(() => {
     fetch(`${baseURL}/employee`, {
       method: "GET",
       headers: {
@@ -104,7 +104,7 @@ function Dashboard() {
         setEmpError(err.message);
         console.log(err);
       });
-  }
+  }, [navigate]);
 
   function handleDelSub(appID) {
     fetch(`${baseURL}/subscription/app/deactivate`, {
@@ -248,7 +248,7 @@ function Dashboard() {
     } else {
       navigate("/login");
     }
-  }, [render, navigate]);
+  }, [render, navigate, fetchSub, fetchEmp]);
 
   return (
     <div className="dash-container">
